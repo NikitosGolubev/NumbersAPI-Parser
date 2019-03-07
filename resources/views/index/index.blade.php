@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class='form-grid__elem'>
-                            <select class='field field_default'>
+                            <select class='select field_default'>
                                 <option value=''>Category</option>
                                 <option value='random'>Random</option>
                                 <option value='trivia'>Trivia</option>
@@ -35,10 +35,10 @@
                             </select>
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='field field_default' type="text" name="num_facts" placeholder="Number of facts" />
+                            <input class='input field_default input_default' type="text" name="num_facts" placeholder="Number of facts" />
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='field' type='submit' name='get_num_facts' value='Parse' />
+                            <input class='btn btn_primary' type='submit' name='get_num_facts' value='Parse' />
                         </div>
                     </div>
                 </form>
@@ -53,7 +53,7 @@
                             </div>
                         </div> 
                         <div class='form-grid__elem'>
-                            <select class='field field_default'>
+                            <select class='select field_default'>
                                 <option value=''>Category</option>
                                 <option value='random'>Random</option>
                                 <option value='trivia'>Trivia</option>
@@ -63,13 +63,13 @@
                             </select>
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='field field_default' type="text" name="from" placeholder="From:" />
+                            <input class='input field_default input_default' type="text" name="from" placeholder="From:" />
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='field field_default' type="text" name="to" placeholder="To:" />
+                            <input class='input field_default input_default' type="text" name="to" placeholder="To:" />
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='field' type='submit' name='get_facts_in_range' value='Parse' />
+                            <input class='btn btn_primary' type='submit' name='get_facts_in_range' value='Parse' />
                         </div>
                     </div>
                 </form>
@@ -84,45 +84,61 @@
                             </div>
                         </div>
                         <div class='form-grid__elem'>
-	                        <div class='field field_default'>
-	                            <div>
+	                        <div class='numbers-storage field field_default'>
+	                            <div class='numbers-storage__empty-message'>
 	                                <div><span>Add something here...</span></div>
 	                            </div>
-	                            <div>
-	                                <div><span>Particular fact numbers</span></div>
+	                            <div class='numbers-storage__ordinary-message'>
+	                                <div><span>Particular fact numbers:</span></div>
 	                            </div>
-	                            <div>
-	                                <div>
-	                                    <div><span>7832</span></div>
-	                                    <button>X</button>
+	                            <div class='numbers-storage__content'>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>7832</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
-	                                <div>
-	                                    <div><span>34</span></div>
-	                                    <button>X</button>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>34</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
-	                                <div>
-	                                    <div><span>5345</span></div>
-	                                    <button>X</button>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>5345</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
-	                                <div>
-	                                    <div><span>234</span></div>
-	                                    <button>X</button>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>234</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
-	                                <div>
-	                                    <div><span>3242</span></div>
-	                                    <button>X</button>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>3242</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
-	                                <div>
-	                                    <div><span>654</span></div>
-	                                    <button>X</button>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>654</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
-	                                <div>
-	                                    <div><span>21</span></div>
-	                                    <button>X</button>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>21</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
-	                                <div>
-	                                    <div><span>7</span></div>
-	                                    <button>X</button>
+	                                <div class='label label_default'>
+	                                	<div class='label__body'>
+	                                        <div class='label__content label__content_default'><span>7</span></div>
+	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                    </div>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -130,14 +146,14 @@
                         <div class='form-grid__elem'>
                             <div>
                                 <div>
-                                    <input class='field field_default' type="text" name="number_to_add" placeholder="Number:" />
+                                    <input class='input field_default input_default' type="text" name="number_to_add" placeholder="Number:" />
                                 </div>
                                 <div>
-                                    <input class='field' type="button" name="add_number" value="Add" />
+                                    <input class='btn btn_alternative' type="button" name="add_number" value="Add" />
                                 </div>
                             </div>
                             <div>
-                                <input class='field' type='submit' name='get_particular_facts' value='Parse' />
+                                <input class='input btn btn_primary particular-facts-form__parse-btn' type='submit' name='get_particular_facts' value='Parse' />
                             </div>
                         </div>
                     </div>

@@ -48,7 +48,7 @@
     color: #333; }
     .parsing-form__number_wrap {
       height: auto;
-      padding: 1.5vmin 2.5vmin; }
+      text-align: center; }
 
 .form-grid {
   display: grid; }
@@ -60,10 +60,24 @@
     padding-right: 0; }
 
 .particular-num-facts-form {
-  grid-template-columns: auto repeat(2, 2fr) 1fr; }
+  grid-template-columns: 4.5vmax repeat(2, 2fr) 1fr; }
 
 .facts-in-range-form {
-  grid-template-columns: auto 2fr 1fr 1fr 1fr; }
+  grid-template-columns: 4.5vmax 2fr 1fr 1fr 1fr; }
 
 .particular-facts-form {
-  grid-template-columns: auto 4fr 1fr; }
+  grid-template-columns: 4.5vmax 4fr 1fr; }
+  .particular-facts-form__parse-btn {
+    margin-top: 5vmin; }
+
+.numbers-storage__empty-message {
+  display: none; }
+
+.numbers-storage__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }

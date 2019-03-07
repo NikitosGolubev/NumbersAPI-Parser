@@ -27,6 +27,10 @@ select, input, button
     background-color: transparent
     outline: none
 
+::selection
+    background: rgba(color(primary), 0.6)
+
+
 /* Styling of often-used core elements */
 
 /* Page body */
@@ -133,47 +137,87 @@ h1, h2, h3, h4, h5, h6,
     &_primary
         fill: color(primary)
 
-/* Btns */
-.btn
-    display: flex
-    align-items: center
-    justify-content: center
-    cursor: pointer
-    @extend %fastTransition
-    z-index: 1
-    
-    &_alternative
-        background-color: color(secondary)
+/* Inputs, fields, selects, btns */
 
-    &_round
-        border-radius: 50%
-        width: 3.5vmax
-        min-width: 40px
-        height: 3.5vmax
-        min-height: 40px
-
-        &:hover
-            background-color: color(primary)
-
-        &:hover .arrow
-            fill: color(alternative)
-
-        &:active
-            opacity: 0.4
-
-/* Inputs, fields */
-
-.field
-    padding: 1.5vmin
-    font-size: $default_font_size
-    font-family: font(main-font)
-    @extend %fastTransition
+.field, .input, .btn, .select
     width: 100%
     height: 100%
+    @extend %mediumTransition
+    font-size: $default_font_size
+    padding: 1.5vmin
+    font-family: font(main-font)
 
+.field
     &_default
         background-color: color(secondary)
         color: color(muted)
+
+.input
+    &_default        
+        &:focus
+            color: color(primary)
+
+.btn
+    cursor: pointer
+    text-align: center
+    @extend %fastTransition
+    &_primary
+        color: color(alternative)
+        background-color: color(primary)
+
+    &_alternative
+        color: color(alternative)
+        background-color: color(default)
+
+    &:hover
+        opacity: 0.8
+
+    &:active
+        opacity: 0.6
+
+.select
+    appearance: none
+    @include setBgImg('images/down.svg', "no-repeat 90% center", true, color(secondary))
+    background-size: 2vmin
+    cursor: pointer
+
+/* Labels */
+
+.label
+    font-size: $small_font_size
+    display: table
+    margin: 0.4vmin
+
+    &__body
+        display: flex
+        align-items: center
+        justify-content: center
+
+    &__content
+        padding: 0 1vmin
+        text-align: center
+
+        &_default
+            color: color(default)
+
+    &__btn
+        padding: 0.5vmin 1vmin
+        cursor: pointer
+        @extend %fastTransition
+
+        &_default
+            color: color(alternative)
+            background-color: color(default)
+
+        &:hover
+            opacity: 0.8
+
+        &:active
+            opacity: 0.6
+
+    &_default
+        border: 1px solid color(default)
+        background-color: color(alternative)
 
 /* Lists */
 

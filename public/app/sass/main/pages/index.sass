@@ -25,7 +25,7 @@
 
         &_wrap
             height: auto
-            padding: 1.5vmin 2.5vmin
+            text-align: center
 
 .form-grid
     display: grid
@@ -40,10 +40,21 @@
         padding-right: 0
 
 .particular-num-facts-form
-    grid-template-columns: auto repeat(2, 2fr) 1fr
+    grid-template-columns: 4.5vmax repeat(2, 2fr) 1fr
 
 .facts-in-range-form
-    grid-template-columns: auto 2fr 1fr 1fr 1fr
+    grid-template-columns: 4.5vmax 2fr 1fr 1fr 1fr
 
 .particular-facts-form
-    grid-template-columns: auto 4fr 1fr
+    grid-template-columns: 4.5vmax 4fr 1fr
+
+    &__parse-btn
+        margin-top: 5vmin
+
+.numbers-storage
+    &__empty-message
+        display: none
+
+    &__content
+        display: flex
+        flex-wrap: wrap
