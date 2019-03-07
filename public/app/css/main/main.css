@@ -45,6 +45,13 @@ ul, ol {
   padding: 0;
   margin: 0; }
 
+select, input, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none; }
+
 /* Styling of often-used core elements */
 /* Page body */
 .page-body {
@@ -62,7 +69,7 @@ ul, ol {
   .link:hover {
     opacity: 0.7; }
   .link:active {
-    color: #a1a1a1; }
+    color: #898888; }
 
 .primary-link {
   color: #71c126; }
@@ -107,7 +114,7 @@ h1, h2, h3, h4, h5, h6,
   color: #71c126; }
 
 .text_muted {
-  color: #a1a1a1; }
+  color: #898888; }
 
 .text_secondary {
   color: #eaeaea; }
@@ -184,16 +191,14 @@ h1, h2, h3, h4, h5, h6,
 
 /* Inputs, fields */
 .field {
-  padding: 1.5vh 2vw;
+  padding: 1.5vmin;
   font-size: 2.8vmin;
   font-family: "Times New Roman";
-  border: 1px solid #a1a1a1;
-  color: #a1a1a1;
-  background-color: #eaeaea;
-  opacity: 0.8; }
-  .field:focus {
-    color: #71c126;
-    opacity: 1; }
+  width: 100%;
+  height: 100%; }
+  .field_default {
+    background-color: #eaeaea;
+    color: #898888; }
 
 /* Lists */
 .docs-list {
@@ -205,7 +210,7 @@ h1, h2, h3, h4, h5, h6,
   .docs-list__header {
     font-weight: bold;
     font-size: 3.5vmin;
-    color: #a1a1a1; }
+    color: #898888; }
 
 /* Code samples */
 .code-sample {
