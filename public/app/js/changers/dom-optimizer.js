@@ -23,3 +23,5 @@ class DomOptimizer {
         });
     }
 }
+
+exports.domOptimizer = new DomOptimizer;

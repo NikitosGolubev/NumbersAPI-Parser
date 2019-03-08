@@ -1,2 +1,1 @@
-<script src='/{{ env('TEMPLATE_DIR') }}/js/main/changers/dom-optimizer.js'></script>
-<script src='/{{ env('TEMPLATE_DIR') }}/js/main/main.js'></script>
+<script src='/{{ env('TEMPLATE_DIR') }}/js/build/main/main.js'></script>

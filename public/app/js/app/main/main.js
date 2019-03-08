@@ -3,10 +3,11 @@
  * @namespace NikitosGolubev
  */
 
+const domOptimizer = require('../../changers/dom-optimizer').domOptimizer;
+
 window.addEventListener('load', starterWorker);
 
 function starterWorker() {
-    let domOptimizer = new DomOptimizer;
     domOptimizer.fixTargetBlank();
 }
 

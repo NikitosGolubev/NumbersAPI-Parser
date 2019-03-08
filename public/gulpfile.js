@@ -11,6 +11,7 @@ const imagemin = require("gulp-imagemin");
 const pngquant = require("imagemin-pngquant");
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const browserify = require('gulp-browserify');
 
 let paths = {
 	php: {
@@ -27,6 +28,8 @@ let paths = {
 		compileDest: "app/css"
 	},
 	js: {
+		compileJsSrc: "app/js/app/**/*.js",
+		compileJsDest: "app/js/build",
 		src: "app/js/**/*.js",
 		dest: "dist/js"
 	},
@@ -128,11 +131,22 @@ function reloadJS() {
 	.pipe(browserSync.reload({stream: true}));
 }
 
+// Making Node.js modules possible to require
+function browserifyJS() {
+	del("app/js/build");
+    return gulp.src(paths.js.compileJsSrc)
+        .pipe(browserify({
+            insertGlobals : true
+        }))
+        .pipe(gulp.dest(paths.js.compileJsDest));
+}
+
 // Watching after changes in files
 function watch() {
 	gulp.watch(paths.sass.src, gulp.series(compileSASS)); // sass
 	gulp.watch(paths.php.src, gulp.series(reloadPHP)); // php
 	gulp.watch(paths.js.src, gulp.series(reloadJS)); // js
+	gulp.watch(paths.js.compileJsSrc, gulp.series(browserifyJS)); // also js
 }
 
 
@@ -148,6 +162,7 @@ exports.loadFonts = loadFonts;
 exports.loadImages = loadImages;
 exports.reloadPHP = reloadPHP;
 exports.reloadJS = reloadJS;
+exports.browserifyJS = browserifyJS;
 exports.watch = watch;
 
 // General tasks which runs some other task and perform some result
@@ -166,13 +181,15 @@ gulp.task("load", loadTask);
 let buildTask = gulp.series(
 	removeDist,
 	compileSASS,
+	browserifyJS,
 	"load"
 );
 gulp.task("build", buildTask);
 
 // Running server and starting watching changes
 let defaultTask = gulp.series(
-					gulp.parallel(compileSASS, reloadPHP, reloadJS), 
+	                gulp.parallel(browserifyJS),
+					gulp.parallel(compileSASS, reloadPHP, reloadJS),
 					gulp.parallel(watch, server)
 				);
 gulp.task("default", defaultTask);
