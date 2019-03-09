@@ -12,6 +12,7 @@ const pngquant = require("imagemin-pngquant");
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const browserify = require('gulp-browserify');
+const babelify = require('babelify');
 
 let paths = {
 	php: {
@@ -30,7 +31,7 @@ let paths = {
 	js: {
 		compileJsSrc: "app/js/app/**/*.js",
 		compileJsDest: "app/js/build",
-		src: "app/js/**/*.js",
+		src: ["app/js/**/*.js", "!app/js/build/**/*.js"],
 		dest: "dist/js"
 	},
 	fonts: {
@@ -127,7 +128,7 @@ function reloadPHP() {
 
 // Reloading js if it changes
 function reloadJS() {
-	return gulp.src(paths.js.src)
+	return gulp.src(paths.js.src,)
 	.pipe(browserSync.reload({stream: true}));
 }
 
@@ -136,7 +137,10 @@ function browserifyJS() {
 	del("app/js/build");
     return gulp.src(paths.js.compileJsSrc)
         .pipe(browserify({
-            insertGlobals : true
+            insertGlobals : true,
+            transform: [babelify.configure({
+                presets: ["@babel/preset-env", "@babel/preset-react"]
+            })]
         }))
         .pipe(gulp.dest(paths.js.compileJsDest));
 }
@@ -146,7 +150,7 @@ function watch() {
 	gulp.watch(paths.sass.src, gulp.series(compileSASS)); // sass
 	gulp.watch(paths.php.src, gulp.series(reloadPHP)); // php
 	gulp.watch(paths.js.src, gulp.series(reloadJS)); // js
-	gulp.watch(paths.js.compileJsSrc, gulp.series(browserifyJS)); // also js
+	gulp.watch(paths.js.src, gulp.series(browserifyJS)); // also js
 }
 
 

@@ -7,8 +7,10 @@
   "author": "Nikita Golubev",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.1.5",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.24.6",
     "del": "^3.0.0",
     "gulp": "^4.0.0",

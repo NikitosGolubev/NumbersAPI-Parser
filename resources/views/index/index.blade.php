@@ -38,7 +38,7 @@
                             <input class='input field_default input_default' type="text" name="num_facts" placeholder="Number of facts" />
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='btn btn_primary' type='submit' name='get_num_facts' value='Parse' />
+                            <input class='js-particular-num-facts-form__submit btn btn_primary' type='submit' name='get_num_facts' value='Parse' />
                         </div>
                     </div>
                 </form>
@@ -165,4 +165,6 @@
 
 @section('footer', '')
 
-@section('scripts', '')
+@section('scripts')
+    <script src='/{{ env('TEMPLATE_DIR') }}/js/build/mvc-starters/forms-validation.js'></script>
+@endsection
