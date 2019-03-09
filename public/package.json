@@ -28,7 +28,6 @@
     "jsdoc": "^3.5.5"
   },
   "dependencies": {
-    "bootstrap": "^4.2.1",
-    "lodash": "^4.17.11"
+    "bootstrap": "^4.2.1"
   }
 }
