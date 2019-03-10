@@ -7,7 +7,7 @@
  * Describes an interface, for behaviour if validation succeeded.
  * Strategy pattern.
  */
-class SuccessBehaviourInterface {
+export default class SuccessBehaviourInterface {
     /**
      * Actions that should be performed if validation of some field succeeded.
      * @param {Mixed|Void} data Data which comes for providing validation response

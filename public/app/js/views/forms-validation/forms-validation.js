@@ -15,8 +15,9 @@ import DefaultSuccessBehaviour from './behaviours/success-behaviours/default-suc
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours\DefaultFailBehaviour
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\SuccessBehaviours\DefaultSuccessBehaviour
  */
-class FormsValidation extends View {
+export default class FormsValidation extends View {
     constructor(model, $failBehaviour = false, $successBehaviour = false) {
+        super();
         this.model = model;
 
         if (!$failBehaviour) $failBehaviour = new DefaultFailBehaviour;
@@ -24,16 +25,25 @@ class FormsValidation extends View {
         if (!$successBehaviour) $successBehaviour = new DefaultSuccessBehaviour;
         this.successBehaviour = $successBehaviour;
 
-        model.registerObserver(this);
+        this.defineUI();
+        this.model.registerObserver(this);
     }
 
     /**
      * @see View update() method
-     * @param  {validationData} validationData Map with following structure:
+     * @param {Map} validationData Map with following structure:
      *     [[validationBlockObjDOM: validationResultBool]]
      * @return {Void}
      */
     update(validationData) {
         
+    }
+
+    /**
+     * Abstract method where UI for each form should be defined
+     * @return {Void}
+     */
+    defineUI() {
+        throw new Error(`It's abstract method, which requires implementation!`);
     }
 }

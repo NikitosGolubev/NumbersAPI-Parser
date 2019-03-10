@@ -9,7 +9,7 @@ import FailBehaviourInterface from "./fail-behaviour-interface";
  * Describes actions that should be taken by default if fields validation failed
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours\FailBehaviourInterface
  */
-class DefaultFailBehaviour extends FailBehaviourInterface {
+export default class DefaultFailBehaviour extends FailBehaviourInterface {
     /**
      * @see FailBehaviourInterface fail() method
      * @param {Object} fieldBlock DOM object with field-block which element(-s) was validated

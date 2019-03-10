@@ -16,7 +16,7 @@
                 <span>Choose the way to parse facts and load them to database:</span>
             </div>
             <div>
-                <form name='get_particular_num_facts_form' method='' action=''>
+                <form class='js-num-of-facts-form' name='get_particular_num_facts_form' method='' action=''>
                     @csrf
                     <div class='particular-num-facts-form parsing-form form-grid'>
                     	<div class='form-grid__elem'>
@@ -44,7 +44,7 @@
                 </form>
             </div>
             <div>
-                <form name='get_facts_in_range_form' method='' action=''>
+                <form class='js-fact-num-in-range-form' name='get_facts_in_range_form' method='' action=''>
                     @csrf
                     <div class='facts-in-range-form parsing-form form-grid'>
                     	<div class='form-grid__elem'>
@@ -75,7 +75,7 @@
                 </form>
             </div>
             <div>
-                <form name='get_particular_facts_form' method='' action=''>
+                <form class='js-particular-fact-numbers-form' name='get_particular_facts_form' method='' action=''>
                     @csrf
                     <div class='particular-facts-form parsing-form form-grid'>
                     	<div class='form-grid__elem'>

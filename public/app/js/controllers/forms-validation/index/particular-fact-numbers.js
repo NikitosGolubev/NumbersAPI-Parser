@@ -4,12 +4,21 @@
  */
 
 import FormsValidationController from '../forms-validation-controller';
+import ParticularFactNumbersView from '../../../views/forms-validation/forms-views/particular-fact-numbers';
+import TestModel from '../../../models/test-model';
 
 /**
  * Provides API to validate "particular fact numbers" form on index page
  * @uses NikitosGolubev\Controllers\FormsValidation\FormsValidationController
+ * @uses NikitosGolubev\Views\FormsValidation\FormsViews\ParticularFactNumbersView
  */
-export default class ParticularFactNumbers extends FormsValidationController {
+export default class ParticularFactNumbersController extends FormsValidationController {
+    constructor() {
+        let model = new TestModel;
+        let view = new ParticularFactNumbersView(model);
+        super(model, view);
+    }
+
     /**
      * @see FormsValidationController validate() method
      */

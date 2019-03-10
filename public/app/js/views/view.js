@@ -6,7 +6,7 @@
 /**
  * Abstract view class which describes interface and common methods
  */
-class View {
+export default class View {
     /**
      * Receives updates from Subject. (part of OBSERVER pattern).
      * 

@@ -9,7 +9,7 @@ import SuccessBehaviourInterface from "./success-behaviour-interface";
  * Describes actions that should be taken by default if fields validation succeeded
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\SuccessBehaviours\SuccessBehaviourInterface
  */
-class DefaultSuccessBehaviour extends SuccessBehaviourInterface {
+export default class DefaultSuccessBehaviour extends SuccessBehaviourInterface {
     /**
      * @see SuccessBehaviourInterface success() method
      * @param {Object} fieldBlock DOM object with field-block which element(-s) was validated

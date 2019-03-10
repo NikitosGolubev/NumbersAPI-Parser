@@ -17,6 +17,6 @@ export default class FormsValidationController extends Controller {
      * @param  {object} event Event Object
      */
     validate(event) {
-        throws new Error('This is abstract method of interface!');
+        throw new Error('This is abstract method of interface!');
     }
 }
