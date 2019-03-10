@@ -4,17 +4,19 @@
  */
 
 import FormsValidationController from '../forms-validation-controller';
+import NumOfFactsModel from '../../../models/forms-validation/forms-models/num-of-facts';
 import NumOfFactsView from '../../../views/forms-validation/forms-views/num-of-facts';
-import TestModel from '../../../models/test-model';
 
 /**
  * Provides API to validate "number of facts" form on index page
+ * 
  * @uses NikitosGolubev\Controllers\FormsValidation\FormsValidationController
+ * @uses NikitosGolubev\Models\FormsValidation\FormsModels\NumOfFactsModel
  * @uses NikitosGolubev\Views\FormsValidation\FormsViews\NumOfFactsView
  */
 export default class NumOfFactsController extends FormsValidationController {
     constructor() {
-        let model = new TestModel;
+        let model = new NumOfFactsModel;
         let view = new NumOfFactsView(model);
         super(model, view);
     }
@@ -23,7 +25,6 @@ export default class NumOfFactsController extends FormsValidationController {
      * @see FormsValidationController validate() method
      */
     validate(event) {
-        console.log(event);
-        event.preventDefault();
+        this.model.validate(event);
     }
 }

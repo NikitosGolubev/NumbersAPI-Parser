@@ -3,20 +3,20 @@
  * @namespace NikitosGolubev\Views\FormsValidation\FormsViews
  */
 
-import FormsValidation from '../forms-validation';
+import FormsValidationView from '../forms-validation-view';
 import { $ } from '../../../services/functional/dom-service';
 
 /**
- * @uses NikitosGolubev\Views\FormsValidation\FormsValidation
+ * @uses NikitosGolubev\Views\FormsValidation\FormsValidationView
  * @uses NikitosGolubev\Services\Functional\DomService
  */
-export default class NumOfFactsView extends FormsValidation {
+export default class NumOfFactsView extends FormsValidationView {
     constructor(model,  $failBehaviour = false, $successBehaviour = false) {
         super(model, $failBehaviour, $successBehaviour);
     }
 
     /**
-     * @see FormsValidation defineUI() method
+     * @see FormsValidationView defineUI() method
      */
     defineUI() {
         this.form = $('.js-num-of-facts-form');

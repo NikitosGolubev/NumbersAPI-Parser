@@ -15,7 +15,7 @@ import DefaultSuccessBehaviour from './behaviours/success-behaviours/default-suc
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours\DefaultFailBehaviour
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\SuccessBehaviours\DefaultSuccessBehaviour
  */
-export default class FormsValidation extends View {
+export default class FormsValidationView extends View {
     constructor(model, $failBehaviour = false, $successBehaviour = false) {
         super();
         this.model = model;

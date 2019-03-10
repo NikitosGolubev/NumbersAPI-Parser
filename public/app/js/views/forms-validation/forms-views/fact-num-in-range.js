@@ -3,20 +3,20 @@
  * @namespace NikitosGolubev\Views\FormsValidation\FormsViews
  */
 
-import FormsValidation from '../forms-validation';
+import FormsValidationView from '../forms-validation-view';
 import { $ } from '../../../services/functional/dom-service';
 
 /**
- * @uses NikitosGolubev\Views\FormsValidation\FormsValidation
+ * @uses NikitosGolubev\Views\FormsValidation\FormsValidationView
  * @uses NikitosGolubev\Services\Functional\DomService
  */
-export default class FactNumInRangeView extends FormsValidation {
+export default class FactNumInRangeView extends FormsValidationView {
     constructor(model,  $failBehaviour = false, $successBehaviour = false) {
         super(model, $failBehaviour, $successBehaviour);
     }
 
     /**
-     * @see FormsValidation defineUI() method
+     * @see FormsValidationView defineUI() method
      */
     defineUI() {
         this.form = $('.js-fact-num-in-range-form');
