@@ -33,7 +33,8 @@ export default class Model {
     removeObserver(observer) {
         let indexOfObserver = this.observers.indexOf(observer);
         if (indexOfObserver > -1) {
-            delete this.observers[indexOfObserver];
+            // Removing observer
+            this.observers.splice(indexOfObserver, 1);
         }
     }
 
