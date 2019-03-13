@@ -4,11 +4,11 @@
  */
 
 import FormsValidationView from '../forms-validation-view';
-import { $ } from '../../../services/functional/dom-service';
+import { $ } from '../../../services/functional/client/dom-service';
 
 /**
  * @uses NikitosGolubev\Views\FormsValidation\FormsValidationView
- * @uses NikitosGolubev\Services\Functional\DomService
+ * @uses NikitosGolubev\Services\Functional\Client\DomService
  */
 export default class FactNumInRangeView extends FormsValidationView {
     constructor(model,  $failBehaviour = false, $successBehaviour = false) {

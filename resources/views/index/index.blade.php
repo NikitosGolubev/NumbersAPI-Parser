@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class='form-grid__elem'>
-                            <select class='select field_default'>
+                            <select class='js-num-of-facts-form__category select field_default'>
                                 <option value=''>Category</option>
                                 <option value='random'>Random</option>
                                 <option value='trivia'>Trivia</option>
@@ -35,7 +35,7 @@
                             </select>
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='input field_default input_default' type="text" name="num_facts" placeholder="Number of facts" />
+                            <input class='js-num-of-facts-form__num-of-facts input field_default input_default' type="text" name="num_facts" placeholder="Number of facts" />
                         </div>
                         <div class='form-grid__elem'>
                             <input class='js-particular-num-facts-form__submit btn btn_primary' type='submit' name='get_num_facts' value='Parse' />

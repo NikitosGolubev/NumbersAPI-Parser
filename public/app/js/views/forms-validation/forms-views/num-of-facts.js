@@ -4,11 +4,13 @@
  */
 
 import FormsValidationView from '../forms-validation-view';
-import { $ } from '../../../services/functional/dom-service';
+import { $ } from '../../../services/functional/client/dom-service';
+import NumOfFactsConfig from '../../../configs/forms/num-of-facts-config';
 
 /**
  * @uses NikitosGolubev\Views\FormsValidation\FormsValidationView
- * @uses NikitosGolubev\Services\Functional\DomService
+ * @uses NikitosGolubev\Services\Functional\Client\DomService
+ * @uses NikitosGolubev\Configs\Forms\NumOfFactsConfig
  */
 export default class NumOfFactsView extends FormsValidationView {
     constructor(model,  $failBehaviour = false, $successBehaviour = false) {
@@ -19,7 +21,7 @@ export default class NumOfFactsView extends FormsValidationView {
      * @see FormsValidationView defineUI() method
      */
     defineUI() {
-        this.form = $('.js-num-of-facts-form');
+        this.form = $(NumOfFactsConfig.FORM_SELECTOR);
     }
 
     /**
