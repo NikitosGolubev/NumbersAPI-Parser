@@ -47,10 +47,54 @@ export default class ParseFactsFieldsValidationService extends FieldsValidationS
             return this.rb.fail(field, ValConf.INTEGER_REQUIRED_MESSAGE);
         }
 
-        if (!this.validator.isFitLimit(+field.value, 0, ValConf.MAX_NUM_ITEMS_TO_PARSE)) {
+        if (!this.validator.isFitLimit(+field.value, 1, ValConf.MAX_NUM_ITEMS_TO_PARSE)) {
             return this.rb.fail(field, ValConf.NUM_OF_FACTS_INVALID);
         }
 
         return this.rb.success(field);
+    }
+
+    /**
+     * Validates field where fact number should be passed.
+     * Fact number - it's a number which might have an appropriate fact related
+     * to this number.
+     * 
+     * @param  {Object} field DOM
+     * @return {Object} response
+     */
+    validateFactNumber(field) {
+        if (this.validator.isEmpty(field)) {
+            return this.rb.fail(field, ValConf.EMPTY_FIELD_MESSAGE);
+        }
+
+        if (!this.validator.isInt(field.value)) {
+            return this.rb.fail(field, ValConf.INTEGER_REQUIRED_MESSAGE);
+        }
+
+        if (!this.validator.isFitLimit(+field.value, ValConf.MIN_FACT_NUMBER, ValConf.MAX_FACT_NUMBER)) {
+            return this.rb.fail(field, ValConf.FACT_NUMBER_EXCEEDS_LIMIT);
+        }
+
+        return this.rb.success(field);
+    }
+
+    /**
+     * Calculates difference btw given numbers to parse and examines it
+     * on if it's allowed or not.
+     * 
+     * @param  {Object} fromField DOM
+     * @param  {Object} toField   DOM
+     * @return {Object} response
+     */
+    validateFactNumberInRangeDifference(fromField, toField) {
+        let difference = Math.abs(+toField.value - +fromField.value);
+
+        if (!this.validator.isFitLimit(difference, 0, ValConf.MAX_NUM_ITEMS_TO_PARSE)) {
+            return this.rb.fail(fromField, ValConf.NUM_OF_FACTS_INVALID, {
+                secondField: toField
+            });
+        }
+
+        return this.rb.success(fromField, '', {secondField: toField});
     }
 }

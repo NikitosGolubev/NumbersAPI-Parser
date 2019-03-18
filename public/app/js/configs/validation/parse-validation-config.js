@@ -65,4 +65,16 @@ export default class ParseValidationConfig extends ValidationConfig {
     static get NUM_OF_FACTS_INVALID() {
         return `You can't parse more <b>${this.MAX_NUM_ITEMS_TO_PARSE}</b> facts and less than <b>0</b>.`;
     }
+
+    /**
+     * Message which says that user typed the fact number which is below or above
+     * valid value.
+     *
+     * @const
+     * @static
+     * @type {String}
+     */
+    static get FACT_NUMBER_EXCEEDS_LIMIT() {
+        return `Align with limit: ${this.MIN_FACT_NUMBER} - ${this.MAX_FACT_NUMBER}`;
+    }
 }

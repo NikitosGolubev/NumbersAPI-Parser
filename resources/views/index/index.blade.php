@@ -53,7 +53,7 @@
                             </div>
                         </div> 
                         <div class='form-grid__elem'>
-                            <select class='select field_default'>
+                            <select class='js-fact-num-in-range-form__category select field_default'>
                                 <option value=''>Category</option>
                                 <option value='random'>Random</option>
                                 <option value='trivia'>Trivia</option>
@@ -63,10 +63,10 @@
                             </select>
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='input field_default input_default' type="text" name="from" placeholder="From:" />
+                            <input class='js-fact-num-in-range-form__from input field_default input_default' type="text" name="from" placeholder="From:" />
                         </div>
                         <div class='form-grid__elem'>
-                            <input class='input field_default input_default' type="text" name="to" placeholder="To:" />
+                            <input class='js-fact-num-in-range-form__to input field_default input_default' type="text" name="to" placeholder="To:" />
                         </div>
                         <div class='form-grid__elem'>
                             <input class='btn btn_primary' type='submit' name='get_facts_in_range' value='Parse' />

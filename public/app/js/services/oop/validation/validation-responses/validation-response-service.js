@@ -3,8 +3,11 @@
  * @namespace NikitosGolubev\Services\OOP\Validation\ValidationResponses;
  */
 
+import { cloneDeep } from 'lodash';
+
 /**
  * Base validation response, may be inheritated by other valid. responses
+ * @using cloneDeep() form lodash
  */
 export default class ValidationResponseService {
     constructor() {
@@ -47,6 +50,10 @@ export default class ValidationResponseService {
     build(result, message) {
         this.setResult(result);
         this.setMessage(message);
-        return this.response;
+        
+        // Deeply cloning response object to prevent
+        // single response being common for separate fields
+        let response = cloneDeep(this.response);
+        return response;
     }
 }
