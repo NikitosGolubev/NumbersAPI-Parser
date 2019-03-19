@@ -98,12 +98,29 @@ export default class ParseFactsFieldsValidationService extends FieldsValidationS
         return this.rb.success(fromField, '', {secondField: toField});
     }
 
+
+    /**
+     * Validates numbers field storage which contains particular numbers
+     * which facts should be parsed. Verifies if user hasn't passed too much
+     * facts. (more than allowed)
+     * 
+     * @param  {Object} field DOM
+     * @param  {Number} $furtherAddedNumOfNumbers Number of facts that would be added.
+     * If there any facts would be added further, so
+     * it's needed to check now, if num of them would be appropriate then.
+     * 
+     * @return {Object} response
+     */
     validateNumbersStorrage(field, $furtherAddedNumOfNumbers = 0) {
         let fieldData = [];
+        // it's assumed that fact numbers are stored in array which was serrialized in string
+        // So if there no value, than nothing were passed, so to not get
+        // error from JSON.parse, It worth to check it first
         if (field.value) {
             fieldData = JSON.parse(field.value);
         }
 
+        // Adjusting length to which it might become further
         let numOfNumbers = fieldData.length + $furtherAddedNumOfNumbers;
 
         if (numOfNumbers > ValConf.MAX_NUM_ITEMS_TO_PARSE) {
