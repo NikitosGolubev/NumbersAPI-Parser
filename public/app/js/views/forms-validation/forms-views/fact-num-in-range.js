@@ -24,7 +24,7 @@ export default class FactNumInRangeView extends FormsValidationView {
 
     /**
      * Getter for 'form' element
-     * @return {[type]} [description]
+     * @return {Object} DOM
      */
     getForm() { return this.form; }
 }

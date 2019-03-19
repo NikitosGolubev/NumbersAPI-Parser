@@ -91,7 +91,7 @@
 	                            <div class='numbers-storage__ordinary-message'>
 	                                <div><span>Particular fact numbers:</span></div>
 	                            </div>
-	                            <div class='numbers-storage__content'>
+	                            <div class='js-particular-fact-numbers-form__numbers-storage-box numbers-storage__content'>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>7832</span></div>
@@ -142,14 +142,15 @@
 	                                </div>
 	                            </div>
 	                        </div>
+                            <input class='js-particular-fact-numbers-form__numbers-storage-field' type="hidden" name='numbers_storage' value='' />
 	                    </div>
                         <div class='form-grid__elem'>
                             <div>
                                 <div>
-                                    <input class='input field_default input_default' type="text" name="number_to_add" placeholder="Number:" />
+                                    <input class='js-particular-fact-numbers-form__fact-number-field input field_default input_default' type="text" name="number_to_add" placeholder="Number:" />
                                 </div>
                                 <div>
-                                    <input class='btn btn_alternative' type="button" name="add_number" value="Add" />
+                                    <div class='js-particular-fact-numbers-form__add-fact-number btn btn_alternative'>Add</div>
                                 </div>
                             </div>
                             <div>

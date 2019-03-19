@@ -27,4 +27,13 @@ export default class ParticularFactNumbersController extends FormsValidationCont
     validate(event) {
         this.model.validate(event);
     }
+
+    /**
+     * Manages the validation of subform which adds factNumbers to container
+     * @param  {Object} event
+     * @return {Void}
+     */
+    validateFactNumberSubForm(event) {
+        this.model.validateFactNumberSubForm(event);
+    }
 }

@@ -97,4 +97,19 @@ export default class ParseFactsFieldsValidationService extends FieldsValidationS
 
         return this.rb.success(fromField, '', {secondField: toField});
     }
+
+    validateNumbersStorrage(field, $furtherAddedNumOfNumbers = 0) {
+        let fieldData = [];
+        if (field.value) {
+            fieldData = JSON.parse(field.value);
+        }
+
+        let numOfNumbers = fieldData.length + $furtherAddedNumOfNumbers;
+
+        if (numOfNumbers > ValConf.MAX_NUM_ITEMS_TO_PARSE) {
+            return this.rb.fail(field, ValConf.NUM_OF_FACTS_INVALID);
+        }
+
+        return this.rb.success(field); 
+    }
 }

@@ -185,6 +185,10 @@ h1, h2, h3, h4, h5, h6,
 
 .btn {
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-align: center; }
   .btn_primary {
     color: #fff;
