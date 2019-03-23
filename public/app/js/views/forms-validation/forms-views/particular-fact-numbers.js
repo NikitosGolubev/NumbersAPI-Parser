@@ -26,9 +26,12 @@ export default class ParticularFactNumbersView extends FormsValidationView {
     defineUI() {
         this.form = $(ParticularFactNumbers.FORM_SELECTOR);
         this.addFactNumberBtn = $(ParticularFactNumbers.ADD_FACT_NUMBER_BTN_SELECTOR);
+        this.factNumberField = $(ParticularFactNumbers.FACT_NUMBER_FIELD_SELECTOR);
+
         this.numbersStorageBox = $(ParticularFactNumbers.NUMEBRS_STORAGE_BOX_SELECTOR);
         this.numbersStorageField = $(ParticularFactNumbers.NUMBERS_STORAGE_FIELD_SELECTOR);
         this.NSMesageContainer = $(ParticularFactNumbers.NUMBERS_STORAGE_MESSAGE_SELECTOR);
+
         this.removeNumberBtnClassName = ParticularFactNumbers.REMOVE_NUMBER_BTN_CLASS_NAME;
         this.numberContainerClassName = ParticularFactNumbers.NUMBER_CONTAINER_CALSS_NAME;
     }
@@ -43,6 +46,8 @@ export default class ParticularFactNumbersView extends FormsValidationView {
     updateNS(factNumber) {
         this.addNumberToStorageField(factNumber); // for form, to send to server
         this.addNumberToStorageBox(factNumber); // visually
+        // Empty the fact number field value
+        this.factNumberField.value = '';
     }
 
     /**
