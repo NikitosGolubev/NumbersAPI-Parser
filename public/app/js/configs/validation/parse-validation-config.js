@@ -77,4 +77,15 @@ export default class ParseValidationConfig extends ValidationConfig {
     static get FACT_NUMBER_EXCEEDS_LIMIT() {
         return `Align with limit: ${this.MIN_FACT_NUMBER} - ${this.MAX_FACT_NUMBER}`;
     }
+
+    /**
+     * Message which says that user passed a dublicate fact number for parsing.
+     *
+     * @const
+     * @static
+     * @type {String}
+     */
+    static get DUBLICATED_FACT_NUMBER() {
+        return `You've already passed this number.`;
+    }
 }

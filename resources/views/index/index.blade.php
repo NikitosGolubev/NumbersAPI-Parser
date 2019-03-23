@@ -85,59 +85,56 @@
                         </div>
                         <div class='form-grid__elem'>
 	                        <div class='numbers-storage field field_default'>
-	                            <div class='numbers-storage__empty-message'>
-	                                <div><span>Add something here...</span></div>
-	                            </div>
-	                            <div class='numbers-storage__ordinary-message'>
-	                                <div><span>Particular fact numbers:</span></div>
+	                            <div class='js-numbers-storage__message'>
+	                                Add some fact numbers:
 	                            </div>
 	                            <div class='js-particular-fact-numbers-form__numbers-storage-box numbers-storage__content'>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>7832</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>34</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>5345</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>234</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>3242</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>654</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>21</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                                <div class='label label_default'>
 	                                	<div class='label__body'>
 	                                        <div class='label__content label__content_default'><span>7</span></div>
-	                                        <div><button class='label__btn label__btn_default'>X</button></div>
+	                                        <div><label class='label__btn label__btn_default'>X</label></div>
 	                                    </div>
 	                                </div>
 	                            </div>

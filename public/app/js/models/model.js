@@ -19,33 +19,44 @@ export default class Model {
     /**
      * Registers observer
      * @param  {Object} observer (view object)
+     * @param {False|Array} $observers Observers container. If false, than
+     *     it's gonna be asigned to default: this.observers.
      * @returns {Void}
      */
-    registerObserver(observer) {
-        this.observers.push(observer);
+    registerObserver(observer, $observers = false) {
+        if ($observers === false) $observers = this.observers;
+        $observers.push(observer);
     }
 
     /**
      * Removes observer
      * @param  {Object} observer (view object)
+     * @param {False|Array} $observers Observers container. If false, than
+     *     it's gonna be asigned to default: this.observers.
      * @returns {Void}
      */
-    removeObserver(observer) {
-        let indexOfObserver = this.observers.indexOf(observer);
+    removeObserver(observer, $observers = false) {
+        if ($observers === false) $observers = this.observers;
+        let indexOfObserver = $observers.indexOf(observer);
         if (indexOfObserver > -1) {
             // Removing observer
-            this.observers.splice(indexOfObserver, 1);
+            $observers.splice(indexOfObserver, 1);
         }
     }
 
     /**
      * Notifies observers sending them some data
      * @param  {Mixed} data
+     * @param {False|Array} $observers Observers container. If false, than
+     *     it's gonna be asigned to default: this.observers.
+     * @param {String} $updateMethodName Method name that should be
+     *     called to notify observers.
      * @returns {Void}
      */
-    notifyObservers(data) {
-        for (let i = 0; i < this.observers.length; i++) {
-            this.observers[i].update(data);
+    notifyObservers(data, $observers = false, $updateMethodName = "update") {
+        if ($observers === false) $observers = this.observers;
+        for (let i = 0; i < $observers.length; i++) {
+            $observers[i][$updateMethodName](data);
         }
     }
 }

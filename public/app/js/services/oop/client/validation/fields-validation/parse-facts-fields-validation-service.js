@@ -98,6 +98,37 @@ export default class ParseFactsFieldsValidationService extends FieldsValidationS
         return this.rb.success(fromField, '', {secondField: toField});
     }
 
+    /**
+     * Validation for field where user passes fact number to parse and
+     * then this number saves in numbers storage.
+     * 
+     * @param  {Object} factNumberField DOM
+     * @param  {Object} numbersStorageField DOM
+     * @return {Object} response
+     */
+    validateFactNumberNS(factNumberField, numbersStorageField) {
+        // Default validation of fact number field
+        let baseValidation = this.validateFactNumber(factNumberField);
+
+        // If validation succeded, so there's a point to go further
+        // Otherwise return an validation failure
+        if (baseValidation.result) {
+            // Validation area
+            
+            // If there're any numbers in numbers storage
+            if (numbersStorageField.value) {
+                let numbersStorageData = JSON.parse(numbersStorageField.value);
+                let factNumber = +factNumberField.value;
+                // Checking if passed number is unique or not
+                if (this.validator.inArray(factNumber, numbersStorageData)) {
+                    return this.rb.fail(factNumberField, ValConf.DUBLICATED_FACT_NUMBER);
+                }
+            }
+
+        } else return baseValidation;
+
+        return this.rb.success(factNumberField);
+    }
 
     /**
      * Validates numbers field storage which contains particular numbers

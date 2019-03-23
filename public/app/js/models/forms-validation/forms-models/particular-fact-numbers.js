@@ -19,8 +19,36 @@ export default class ParticularFactNumbersModel extends FormsValidationModel {
     constructor() {
         super();
         this.validator = new ParseFactsFieldsValidationService;
+
+        /**
+         * Numbers storage (subform) observers
+         * @type {Array}
+         */
+        this.NSObservers = [];
+
         this.factNumberField = $(FormConf.FACT_NUMBER_FIELD_SELECTOR);
         this.numbersStorageField = $(FormConf.NUMBERS_STORAGE_FIELD_SELECTOR);
+    }
+
+    /**
+     * @see Model.registerObserver()
+     */
+    registerNSObserver(observer) {
+        this.registerObserver(observer, this.NSObservers);
+    }
+
+    /**
+     * @see Model.removeObserver()
+     */
+    removeNSObserver(observer) {
+        this.removeObserver(observer, this.NSObservers);
+    }
+
+    /**
+     * @see Model.notifyObservers()
+     */
+    notifyNSObservers(data) {
+        this.notifyObservers(data, this.NSObservers, "updateNS");
     }
 
     /**
@@ -37,7 +65,12 @@ export default class ParticularFactNumbersModel extends FormsValidationModel {
      * @return {Void}
      */
     validateFactNumberSubForm(event) {
-        console.log(this.validator.validateFactNumber(this.factNumberField));
-        console.log(this.validator.validateNumbersStorrage(this.numbersStorageField, 1));
+        let factNumberValidation = this.validator.validateFactNumberNS(this.factNumberField, this.numbersStorageField);
+        let numbersStorageValidation = this.validator.validateNumbersStorrage(this.numbersStorageField, 1);
+
+        if (factNumberValidation.result && numbersStorageValidation.result) {
+            let factNumber = +this.factNumberField.value;
+            this.notifyNSObservers(factNumber);
+        }
     }
 }

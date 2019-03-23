@@ -44,4 +44,14 @@ export default class ValidationService {
     isInt(val) {
         return Number.isInteger(+val);
     }
+
+    /**
+     * Verifies if array contains an element.
+     * @param  {Mixed} val
+     * @param  {Array} arr
+     * @return {Boolean}
+     */
+    inArray(val, arr) {
+        return arr.includes(val);
+    }
 }

@@ -70,9 +70,6 @@
   .particular-facts-form__parse-btn {
     margin-top: 5vmin; }
 
-.numbers-storage__empty-message {
-  display: none; }
-
 .numbers-storage__content {
   display: -webkit-box;
   display: -webkit-flex;
