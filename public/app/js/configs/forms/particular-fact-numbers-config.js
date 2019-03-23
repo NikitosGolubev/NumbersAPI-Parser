@@ -85,4 +85,22 @@ export default class ParticularFactNumbersConfig extends Config {
     static get NUMBERS_STORAGE_EMPTINESS_MESSAGE() {
         return `Add some fact numbers:`;
     }
+
+    /**
+     * @const
+     * @static
+     * @type {String}
+     */
+    static get REMOVE_NUMBER_BTN_CLASS_NAME() {
+        return `js-label__remove-number`;
+    }
+
+    /**
+     * @const
+     * @static
+     * @type {String}
+     */
+    static get NUMBER_CONTAINER_CALSS_NAME() {
+        return `js-number-container`;
+    }
 }

@@ -15,8 +15,10 @@ export default class ParseFormsUIFactory {
     static createFactNumberElem(factNumber) {
         // <div></div>
         let numberElement = document.createElement('div');
+        numberElement.classList.add('js-number-container');
         numberElement.classList.add('label');
         numberElement.classList.add('label_default');
+        numberElement.setAttribute('fact-number', factNumber);
 
         // <div></div>
         let body = document.createElement('div');
@@ -36,6 +38,7 @@ export default class ParseFormsUIFactory {
         let removeBtn = document.createElement('label');
         removeBtn.classList.add('label__btn');
         removeBtn.classList.add('label__btn_default');
+        removeBtn.classList.add('js-label__remove-number');
         removeBtn.innerText = 'X';
 
         removeBtnContainer.appendChild(removeBtn);

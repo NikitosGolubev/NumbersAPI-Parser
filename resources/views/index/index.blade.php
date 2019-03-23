@@ -89,54 +89,9 @@
 	                                Add some fact numbers:
 	                            </div>
 	                            <div class='js-particular-fact-numbers-form__numbers-storage-box numbers-storage__content'>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>7832</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>34</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>5345</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>234</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>3242</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>654</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>21</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
-	                                <div class='label label_default'>
-	                                	<div class='label__body'>
-	                                        <div class='label__content label__content_default'><span>7</span></div>
-	                                        <div><label class='label__btn label__btn_default'>X</label></div>
-	                                    </div>
-	                                </div>
+	                                <!--
+                                        FACT NUMBERS STORAGE BOX
+                                    -->
 	                            </div>
 	                        </div>
                             <input class='js-particular-fact-numbers-form__numbers-storage-field' type="hidden" name='numbers_storage' value='' />

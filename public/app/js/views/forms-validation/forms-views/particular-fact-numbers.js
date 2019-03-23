@@ -29,6 +29,8 @@ export default class ParticularFactNumbersView extends FormsValidationView {
         this.numbersStorageBox = $(ParticularFactNumbers.NUMEBRS_STORAGE_BOX_SELECTOR);
         this.numbersStorageField = $(ParticularFactNumbers.NUMBERS_STORAGE_FIELD_SELECTOR);
         this.NSMesageContainer = $(ParticularFactNumbers.NUMBERS_STORAGE_MESSAGE_SELECTOR);
+        this.removeNumberBtnClassName = ParticularFactNumbers.REMOVE_NUMBER_BTN_CLASS_NAME;
+        this.numberContainerClassName = ParticularFactNumbers.NUMBER_CONTAINER_CALSS_NAME;
     }
 
     /**
@@ -41,6 +43,49 @@ export default class ParticularFactNumbersView extends FormsValidationView {
     updateNS(factNumber) {
         this.addNumberToStorageField(factNumber); // for form, to send to server
         this.addNumberToStorageBox(factNumber); // visually
+    }
+
+    /**
+     * Recieves number container which is inside storage box and removes
+     * the data about number both from box and field storages.
+     * 
+     * @param  {Object} numberContainer DOM
+     * @return {Void}
+     */
+    removeNumber(numberContainer) {
+        this.removeNumberFromStorageField(numberContainer);
+        this.removeNumberFromStorageBox(numberContainer);
+    }
+
+    /**
+     * Removes VISUALLY number element from box storage.
+     * 
+     * @param  {Object} numberContainer DOM
+     * @return {Void}
+     */
+    removeNumberFromStorageBox(numberContainer) {
+        let numbersContainerParent = numberContainer.parentNode;
+        numbersContainerParent.removeChild(numberContainer);
+        // Updating message due to changings in storage
+        this.adjustStorageBoxMessage();
+    }
+
+    /**
+     * Removes number data from HIDDEN field storage.
+     * 
+     * @param  {Object} numberContainer DOM
+     * @return {Void}
+     */
+    removeNumberFromStorageField(numberContainer) {
+        let factNumber = numberContainer.getAttribute('fact-number');
+        let numbersStorage = this.getNumbersStorageArray();
+
+        // Getting index of fact number in numbers storage.
+        let index = numbersStorage.indexOf(factNumber);
+        // Removing fact number from storage.
+        numbersStorage.splice(index, 1);
+        
+        this.setNumbersStorageFieldValue(numbersStorage);
     }
 
     /**
@@ -73,7 +118,8 @@ export default class ParticularFactNumbersView extends FormsValidationView {
         let numbersStorage = this.getNumbersStorageArray();
         let message = ''; // New message that would be shown.
 
-        if (numbersStorage) {
+        // If numbers storage array is NOT empty
+        if (numbersStorage.length > 0) {
             // Getting num of items user already added
             let numFactNumbersAdded = numbersStorage.length;
             message = ParticularFactNumbers.genCommonStorageMessage(numFactNumbersAdded);
@@ -114,16 +160,16 @@ export default class ParticularFactNumbersView extends FormsValidationView {
 
     /**
      * Setting value for storage field.
-     * Array with numbers | empty string.
      * 
-     * @param {String|Array} $numbersStorageVal
+     * @param {Array} numbersStorageArray
      */
-    setNumbersStorageFieldValue($numbersStorageVal = '') {
-        if ($numbersStorageVal) {
+    setNumbersStorageFieldValue(numbersStorageArr) {
+        // If numbers storage array is NOT empty
+        if (numbersStorageArr.length > 0) {
             // Array to string
-            $numbersStorageVal = JSON.stringify($numbersStorageVal);
-        }
-        this.numbersStorageField.value = $numbersStorageVal;
+            numbersStorageArr = JSON.stringify(numbersStorageArr);
+        } else numbersStorageArr = '';
+        this.numbersStorageField.value = numbersStorageArr;
     }
 
     /**
@@ -133,4 +179,8 @@ export default class ParticularFactNumbersView extends FormsValidationView {
     getForm() { return this.form; }
 
     getAddFactNumberBtn() { return this.addFactNumberBtn; }
+
+    getRemoveNumberBtnClassName() { return this.removeNumberBtnClassName; }
+
+    getNumberContainerClassName() { return this.numberContainerClassName; }
 }

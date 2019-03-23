@@ -8,6 +8,7 @@ let factNumInRangeController = new FactNumInRangeController;
 let particularFactNumbersController = new ParticularFactNumbersController;
 
 // Getting elements for binding events
+let body = document.querySelector('body');
 let numOfFactsForm = numOfFactsController.getView().getForm();
 let factNumInRangeForm = factNumInRangeController.getView().getForm();
 let particularFactNumbersForm = particularFactNumbersController.getView().getForm();
@@ -32,4 +33,9 @@ particularFactNumbersForm.addEventListener(
 addFactNumberBtn.addEventListener(
     'click',
     (event) => particularFactNumbersController.validateFactNumberSubForm(event)
+);
+
+body.addEventListener(
+    'click',
+    (event) => particularFactNumbersController.removeNumber(event)
 );
