@@ -35,7 +35,17 @@ export default class FormsValidationView extends View {
      * @return {Void}
      */
     update(valData) {
-        for (let i = 0; i < valData.length; i++) {
+        // Just looping backwards. Why so?
+        // Because toasts about validation results appears one ABOVE other
+        // and as valData normally consists of fields ordered by their position in
+        // form, to make validation result more understandable I need to do this here.
+        // Fields position in form: (1st 2nd 3rd ...)
+        // Toasts with messagies position WITHOUT backward loop: (3rd, 2nd, 1st ...)
+        // WITH backward loop (1st 2nd 3rd ...) <- Exactly the thing I need
+        // I KNOW IT'S BAD SOLUTION, BUT I'VE NO CLUE HOW TO FIX IT FAST.
+        // And it's not so crucial here btw.
+        // Opened issue on GitHub: https://github.com/marcelodolza/iziToast/issues/170
+        for (let i = (valData.length - 1); i >= 0; i--) {
             if (valData[i].result) this.successBehaviour.success(valData[i]);
             else this.failBehaviour.fail(valData[i]);
         }

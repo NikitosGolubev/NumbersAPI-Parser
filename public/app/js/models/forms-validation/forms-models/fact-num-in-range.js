@@ -41,7 +41,7 @@ export default class FactNumInRangeModel extends FormsValidationModel {
         // Building validation responses array, because we need an opportunity
         // to add or avoid adding the differenceVal object depend on if 
         // the validation on difference was performed or not.
-        let validationResponses = [categoryVal, fromFieldVal, toFieldVal];
+        let validationResponses = [categoryVal, toFieldVal, fromFieldVal];
         if (Object.keys(differenceVal).length > 0) validationResponses.push(differenceVal);
 
         super.validate(event, ...validationResponses);

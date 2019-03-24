@@ -23,6 +23,10 @@ export default class DefaultFailBehaviour extends FailBehaviourInterface {
             position: 'topRight',
             transitionOut: 'fadeOutDown',
             transitionIn: 'bounceInRight',
+            closeOnEscape: true,
+            layout: 2,
+            overlay: true,
+            overlayClose: true,
             timeout: 5000
         });
     }
