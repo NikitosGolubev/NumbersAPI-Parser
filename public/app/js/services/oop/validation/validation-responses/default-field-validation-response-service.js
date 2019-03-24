@@ -17,11 +17,11 @@ export default class DefaultFieldValidationResponseService extends ValidationRes
     }
 
     /**
-     * Fields that was validated
-     * @param {Object} field DOM
+     * Fields name that was validated
+     * @param {String} fieldName
      */
-    setMainField(field) {
-        this.response.mainField = field;
+    setFieldName(fieldName) {
+        this.response.fieldName = fieldName;
     }
 
     /**
@@ -38,16 +38,16 @@ export default class DefaultFieldValidationResponseService extends ValidationRes
      * @example Expected response:
      * {
      *     super.response,
-     *     field: {Dom object with validated field}   
+     *     fieldName: {String with field name}   
      * }
      * 
      * @see ValidationResponseService
-     * @param  {field} field Field that was validated
+     * @param  {String} fieldName Field that was validated
      * @param {Object} $addPropertiesObj Additional properties to pass to response
      * @return {Object} response
      */
-    build(result, message, field, $addPropertiesObj = false) {
-        this.setMainField(field);
+    build(result, message, fieldName, $addPropertiesObj = false) {
+        this.setFieldName(fieldName);
         if ($addPropertiesObj) this.setAdditionalProperties($addPropertiesObj);
 
         return super.build(result, message);
@@ -56,26 +56,26 @@ export default class DefaultFieldValidationResponseService extends ValidationRes
     /**
      * Forms success response of field validation
      * 
-     * @param  {Object}  field DOM
+     * @param  {String} fieldName
      * @param  {Boolean|String} $message
      * @param {Object} $addPropertiesObj Additional properties to pass to response
      * @return {Object} response
      */
-    success(field, $message = false, $addPropertiesObj = false) {
+    success(fieldName, $message = false, $addPropertiesObj = false) {
         if (!$message) $message = ValidationConfig.DEFAULT_SUCCESS_MESSAGE;
-        return this.build(true, $message, field, $addPropertiesObj);
+        return this.build(true, $message, fieldName, $addPropertiesObj);
     }
 
     /**
      * Forms fail response of field validation
      * 
-     * @param  {Object}  field DOM
+     * @param  {String} fieldName
      * @param  {Boolean|String} $message
      * @param {Object} $addPropertiesObj Additional properties to pass to response
      * @return {Object} response
      */
-    fail(field, $message = false, $addPropertiesObj = false) {
+    fail(fieldName, $message = false, $addPropertiesObj = false) {
         if (!$message) $message = ValidationConfig.DEFAULT_FAIL_MESSAGE;
-        return this.build(false, $message, field, $addPropertiesObj);
+        return this.build(false, $message, fieldName, $addPropertiesObj);
     }
 }

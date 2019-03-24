@@ -4,6 +4,7 @@
  */
 
 import FailBehaviourInterface from "./fail-behaviour-interface";
+import iziToast from "izitoast";
 
 /**
  * Describes actions that should be taken by default if fields validation failed
@@ -12,10 +13,17 @@ import FailBehaviourInterface from "./fail-behaviour-interface";
 export default class DefaultFailBehaviour extends FailBehaviourInterface {
     /**
      * @see FailBehaviourInterface fail() method
-     * @param {Object} fieldBlock DOM object with field-block which element(-s) was validated
+     * @param {Object} fieldValResult Fields validation responsed
      * @return {Void}
      */
-    fail(fieldBlock) {
-
+    fail(fieldValResult) {
+        iziToast.error({
+            title: `${fieldValResult.fieldName}:`,
+            message: fieldValResult.message,
+            position: 'topRight',
+            transitionOut: 'fadeOutDown',
+            transitionIn: 'bounceInRight',
+            timeout: 5000
+        });
     }
 }

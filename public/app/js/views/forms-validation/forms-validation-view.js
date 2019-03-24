@@ -31,12 +31,14 @@ export default class FormsValidationView extends View {
 
     /**
      * @see View update() method
-     * @param {Map} validationData Map with following structure:
-     *     [[validationBlockObjDOM: validationResultBool]]
+     * @param {Array} valData Array with fields validation responses
      * @return {Void}
      */
-    update(validationData) {
-        
+    update(valData) {
+        for (let i = 0; i < valData.length; i++) {
+            if (valData[i].result) this.successBehaviour.success(valData[i]);
+            else this.failBehaviour.fail(valData[i]);
+        }
     }
 
     /**

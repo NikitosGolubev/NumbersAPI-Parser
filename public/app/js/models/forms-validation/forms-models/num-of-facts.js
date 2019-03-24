@@ -27,8 +27,8 @@ export default class NumOfFactsModel extends FormsValidationModel {
      * @see FormsValidationModel validate() method
      */
     validate(event) {
-        console.log(this.validator.validateCategory(this.categoryField));
-        console.log(this.validator.validateNumOfFacts(this.numOfFactsField));
-        event.preventDefault();
+        let categoryVal =  this.validator.validateCategory(this.categoryField);
+        let numOfFactsVal = this.validator.validateNumOfFacts(this.numOfFactsField);
+        super.validate(event, categoryVal, numOfFactsVal);
     }
 }

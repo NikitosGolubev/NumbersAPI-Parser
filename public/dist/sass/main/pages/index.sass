@@ -1,0 +1,57 @@
+@import ../settings
+
+.forms
+    display: flex
+    flex-direction: column
+    max-width: 70%
+    margin: auto
+    
+    &_wrap
+        margin-top: 4vh
+
+    &__header
+        color: color(secondary)
+        background-color: color(default)
+        font-family: font(alternative)
+        text-align: center
+        font-size: $super_big_font_size
+        padding-bottom: 0.5vmin
+
+.parsing-form
+    margin: 2vmin 0
+
+    &__number
+        color: color(default)
+
+        &_wrap
+            height: auto
+            text-align: center
+
+.form-grid
+    display: grid
+
+    &__elem
+        padding: 0 2vmin
+
+    & &__elem:first-child
+        padding-left: 0
+
+    & &__elem:last-child
+        padding-right: 0
+
+.particular-num-facts-form
+    grid-template-columns: 4.5vmax repeat(2, 2fr) 1fr
+
+.facts-in-range-form
+    grid-template-columns: 4.5vmax 2fr 1fr 1fr 1fr
+
+.particular-facts-form
+    grid-template-columns: 4.5vmax 4fr 1fr
+
+    &__parse-btn
+        margin-top: 5vmin
+
+.numbers-storage
+    &__content
+        display: flex
+        flex-wrap: wrap

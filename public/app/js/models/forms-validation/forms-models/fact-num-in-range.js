@@ -28,20 +28,22 @@ export default class FactNumInRangeModel extends FormsValidationModel {
      * @see FormsValidationModel validate() method
      */
     validate(event) {
-        console.log(this.validator.validateCategory(this.categoryField));
+        let categoryVal = this.validator.validateCategory(this.categoryField);
+        let fromFieldVal = this.validator.validateFactNumber(this.fromField, 'TO field');
+        let toFieldVal = this.validator.validateFactNumber(this.toField, 'FROM field');
 
-        let fromFieldResponse = this.validator.validateFactNumber(this.fromField);
-        let toFieldResponse = this.validator.validateFactNumber(this.toField);
-        console.log(fromFieldResponse);
-        console.log(toFieldResponse);
-
-        let differenceResponse = {};
-        if (fromFieldResponse.result && toFieldResponse.result) {
-            differenceResponse = this.validator
+        let differenceVal = {};
+        if (fromFieldVal.result && toFieldVal.result) {
+            differenceVal = this.validator
             .validateFactNumberInRangeDifference(this.fromField, this.toField);
-            console.log(differenceResponse);
         }
 
-        event.preventDefault();
+        // Building validation responses array, because we need an opportunity
+        // to add or avoid adding the differenceVal object depend on if 
+        // the validation on difference was performed or not.
+        let validationResponses = [categoryVal, fromFieldVal, toFieldVal];
+        if (Object.keys(differenceVal).length > 0) validationResponses.push(differenceVal);
+
+        super.validate(event, ...validationResponses);
     }
 }

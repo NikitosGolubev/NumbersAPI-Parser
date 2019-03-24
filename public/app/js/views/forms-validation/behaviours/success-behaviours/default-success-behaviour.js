@@ -12,10 +12,11 @@ import SuccessBehaviourInterface from "./success-behaviour-interface";
 export default class DefaultSuccessBehaviour extends SuccessBehaviourInterface {
     /**
      * @see SuccessBehaviourInterface success() method
-     * @param {Object} fieldBlock DOM object with field-block which element(-s) was validated
+     * @param {Object} fieldValResult Fields validation response
      * @return {Void}
      */
-    success(fieldBlock) {
-
+    success(fieldValResult) {
+        // Not touching anything. If validation succeded, just leave the field in
+        // the state it was. 
     }
 }

@@ -1,0 +1,245 @@
+@import settings
+
+@font-face
+    src: local(font(alternative)), url(map-get($fonts_paths, alternative))
+    font-family: font(alternative)
+    font-display: swap
+
+body
+    color: color(default)
+    background-color: color(alternative)
+    font-family: font(main-font)
+    line-height: 1.4
+    font-size: $default_font_size
+
+a
+    text-decoration: none
+
+ul, ol
+    list-style: none
+    padding: 0
+    margin: 0
+
+select, input, button
+    margin: 0
+    padding: 0
+    border: none
+    background-color: transparent
+    outline: none
+
+::selection
+    background: rgba(color(primary), 0.6)
+
+
+/* Styling of often-used core elements */
+
+/* Page body */
+.page-body
+    padding: 4vmin 10vmin
+
+/* Page header */
+.page-header
+    &__github-link
+        margin-top: 1vh
+
+/* Links */
+.link
+    color: color(primary)
+    background-color: color(secondary)
+    padding: 0.1vmin 1vmin
+    @extend %fastTransition
+
+    &:hover
+        opacity: 0.7
+
+    &:active
+        color: color(muted)
+
+.primary-link
+    color: color(primary)
+    @extend %fastTransition
+
+    &:hover
+        opacity: 0.6
+
+
+/* Headers */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+    font-family: font(alternative)
+    padding: 1vh 0
+    margin: 0
+    line-height: 1
+
+.h1, h1
+    font-size: $h1_font_size
+
+.h2, h2
+    font-size: $h2_font_size
+
+.h3, h3
+    font-size: $h3_font_size
+
+.h4, h4
+    font-size: $h4_font_size
+
+.h5, h5
+    font-size: $h5_font_size
+
+.h6, h6
+    font-size: $h6_font_size
+
+/* Text */
+
+/* text color */
+@each $color_name, $color in $colors
+    .text_#{$color_name}
+        color: $color
+
+/* font size and transformations */
+.text
+    &_uppercase
+        text-transform: uppercase
+
+    &_small-sz
+        font-size: $small_font_size
+
+    &_default-sz
+        font-size: $default_font_size
+
+    &_medium-sz
+        font-size: $medium_font_size
+
+    &_big-sz
+        font-size: $big_font_size
+
+    &_super-big-sz
+        font-size: $super_big_font_size
+
+/* fonts */
+@each $font_name, $font in $fonts
+    .text_#{$font_name}
+        font-family: $font
+
+/* arrows */
+.arrow
+    @extend %fastTransition
+    
+    &__up
+        width: 1.5vmax
+        min-width: 20px
+
+    &__down
+        width: 1.5vmax
+        min-width: 20px
+
+    &_primary
+        fill: color(primary)
+
+/* Inputs, fields, selects, btns */
+
+.field, .input, .btn, .select
+    width: 100%
+    height: 100%
+    @extend %mediumTransition
+    font-size: $default_font_size
+    padding: 1.5vmin
+    font-family: font(main-font)
+
+.field
+    &_default
+        background-color: color(secondary)
+        color: color(muted)
+
+.input
+    &_default        
+        &:focus
+            color: color(primary)
+
+.btn
+    cursor: pointer
+    user-select: none
+    text-align: center
+    @extend %fastTransition
+    &_primary
+        color: color(alternative)
+        background-color: color(primary)
+
+    &_alternative
+        color: color(alternative)
+        background-color: color(default)
+
+    &:hover
+        opacity: 0.8
+
+    &:active
+        opacity: 0.6
+
+.select
+    appearance: none
+    @include setBgImg('images/down.svg', "no-repeat 90% center", true, color(secondary))
+    background-size: 2vmin
+    cursor: pointer
+
+/* Labels */
+
+.label
+    font-size: $small_font_size
+    display: table
+    margin: 0.4vmin
+
+    &__body
+        display: flex
+        align-items: center
+        justify-content: center
+
+    &__content
+        padding: 0 1vmin
+        text-align: center
+
+        &_default
+            color: color(default)
+
+    &__btn
+        padding: 0.4vmin 1vmin
+        cursor: pointer
+        user-select: none
+        @extend %fastTransition
+
+        &_default
+            color: color(alternative)
+            background-color: color(default)
+
+        &:hover
+            opacity: 0.8
+
+        &:active
+            opacity: 0.6
+
+    &_default
+        border: 1px solid color(default)
+        background-color: color(alternative)
+
+/* Lists */
+
+.docs-list
+    display: table
+
+    &__item
+        background-color: color(secondary)
+        margin: 2vh 0
+        padding: 1.5vmin 3vmin
+    
+    &__header
+        font-weight: bold
+        font-size: $big_font_size
+        color: color(muted)
+
+/* Code samples */
+
+.code-sample
+    background-color: color(secondary)
+    display: table
+    padding: 2vh
+    font-size: $small_font_size

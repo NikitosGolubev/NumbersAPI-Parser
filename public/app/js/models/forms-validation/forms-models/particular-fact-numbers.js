@@ -55,8 +55,8 @@ export default class ParticularFactNumbersModel extends FormsValidationModel {
      * @see FormsValidationModel validate() method
      */
     validate(event) {
-        console.log(this.validator.validateNumbersStorrage(this.numbersStorageField));
-        event.preventDefault();
+        let numbersStorageVal = this.validator.validateNumbersStorrage(this.numbersStorageField);
+        super.validate(event, numbersStorageVal);
     }
 
     /**
@@ -65,12 +65,14 @@ export default class ParticularFactNumbersModel extends FormsValidationModel {
      * @return {Void}
      */
     validateFactNumberSubForm(event) {
-        let factNumberValidation = this.validator.validateFactNumberNS(this.factNumberField, this.numbersStorageField);
-        let numbersStorageValidation = this.validator.validateNumbersStorrage(this.numbersStorageField, 1);
+        let factNumberVal = this.validator.validateFactNumberNS(this.factNumberField, this.numbersStorageField);
+        let numbersStorageVal = this.validator.validateNumbersStorrage(this.numbersStorageField, 1);
 
-        if (factNumberValidation.result && numbersStorageValidation.result) {
+        if (factNumberVal.result && numbersStorageVal.result) {
             let factNumber = +this.factNumberField.value;
             this.notifyNSObservers(factNumber);
+        } else {
+            super.validate(event, factNumberVal, numbersStorageVal);
         }
     }
 }

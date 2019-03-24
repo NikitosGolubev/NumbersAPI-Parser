@@ -7,6 +7,7 @@
 @section('head-tags')
     <link rel="stylesheet" type="text/css" href="/{{ env('TEMPLATE_DIR') }}/css/main/pages/index.css" />
     <link rel="stylesheet" type="text/css" href="/{{ env('TEMPLATE_DIR') }}/css/main/media/pages/index.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/izitoast/dist/css/iziToast.min.css" />
 @endsection
 
 @section('main')
