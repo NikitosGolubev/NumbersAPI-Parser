@@ -16,8 +16,9 @@
             <div class='forms__header'>
                 <span>Choose the way to parse facts and load them to database:</span>
             </div>
+
             <div>
-                <form class='js-num-of-facts-form' name='get_particular_num_facts_form' method='' action=''>
+                <form class='js-num-of-facts-form' name='get_particular_num_facts_form' method='POST' action='/parse/num-of-facts'>
                     @csrf
                     <div class='particular-num-facts-form parsing-form form-grid'>
                     	<div class='form-grid__elem'>
@@ -26,7 +27,7 @@
                             </div>
                         </div>
                         <div class='form-grid__elem'>
-                            <select class='js-num-of-facts-form__category select field_default'>
+                            <select name='category' class='js-num-of-facts-form__category select field_default'>
                                 <option value=''>Category</option>
                                 <option value='random'>Random</option>
                                 <option value='trivia'>Trivia</option>
@@ -44,8 +45,9 @@
                     </div>
                 </form>
             </div>
+
             <div>
-                <form class='js-fact-num-in-range-form' name='get_facts_in_range_form' method='' action=''>
+                <form class='js-fact-num-in-range-form' name='get_facts_in_range_form' method='POST' action='/parse/fact-num-in-range'>
                     @csrf
                     <div class='facts-in-range-form parsing-form form-grid'>
                     	<div class='form-grid__elem'>
@@ -54,7 +56,7 @@
                             </div>
                         </div> 
                         <div class='form-grid__elem'>
-                            <select class='js-fact-num-in-range-form__category select field_default'>
+                            <select name='category' class='js-fact-num-in-range-form__category select field_default'>
                                 <option value=''>Category</option>
                                 <option value='random'>Random</option>
                                 <option value='trivia'>Trivia</option>
@@ -75,8 +77,9 @@
                     </div>
                 </form>
             </div>
+
             <div>
-                <form class='js-particular-fact-numbers-form' name='get_particular_facts_form' method='' action=''>
+                <form class='js-particular-fact-numbers-form' name='get_particular_facts_form' method='POST' action='/parse/particular-fact-numbers'>
                     @csrf
                     <div class='particular-facts-form parsing-form form-grid'>
                     	<div class='form-grid__elem'>

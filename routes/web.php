@@ -12,3 +12,16 @@
 */
 
 Route::get('/', 'IndexController@index');
+
+// Handling parse forms
+Route::prefix('parse')->group(function () {
+    Route::post('num-of-facts', 'Parsing\NumOfFactsController@index');
+    Route::post('fact-num-in-range', 'Parsing\FactNumInRangeController@index');
+    Route::post('particular-fact-numbers', 'Parsing\ParticularFactNumbersController@index');
+});
+
+// Handling https errors
+Route::group(['as' => 'error.', 'prefix' => 'error'], function () {
+    Route::get('403', 'ErrorsController@show403')->name('403');
+    Route::get('404', 'ErrorsController@show404')->name('404');
+});

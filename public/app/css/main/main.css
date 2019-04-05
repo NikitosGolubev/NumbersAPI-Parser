@@ -57,10 +57,10 @@ select, input, button {
   background-color: transparent;
   outline: none; }
 
-::-moz-selection {
+::-moz-selection, mark {
   background: rgba(113, 193, 38, 0.6); }
 
-::selection {
+::selection, mark {
   background: rgba(113, 193, 38, 0.6); }
 
 /* Styling of often-used core elements */
