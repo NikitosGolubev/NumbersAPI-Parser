@@ -5,7 +5,7 @@ namespace App\Services\Validation\Commands\FieldValidationCommands;
 use App\Services\Validation\Commands\FieldValidationCommands\FieldValidationCommand;
 use App\Services\Validation\SimpleVal;
 
-class ValidateCategoryCommand extends FieldValidationCommand {
+class NumFactsToParseValidationCommand extends FieldValidationCommand { 
     public function execute() {
         $is_empty = SimpleVal::isEmpty($this->content, $this->isRequired);
         
@@ -15,8 +15,17 @@ class ValidateCategoryCommand extends FieldValidationCommand {
             return $this->success($this->cfg['DEFAULT_SUCCESS_MESSAGE']);
         }
 
-        if (!in_array($this->content, $this->cfg['CATEGORIES'])) {
-            return $this->fail($this->cfg['INVALID_CATEGORY_MESSAGE']);
+        if (!SimpleVal::isInteger($this->content)) {
+            return $this->fail($this->cfg['INVALID_FACT_NUMBER_TYPE_MESSAGE']);
+        }
+
+        if (!SimpleVal::isFitLimit(
+                $this->content,
+                $this->cfg['MIN_NUM_TO_PARSE'],
+                $this->cfg['MAX_NUM_TO_PARSE']
+            )
+        ) {
+            return $this->fail($this->cfg['INVALID_NUMBERS_GAP_MESSAGE']);
         }
 
         return $this->success($this->cfg['DEFAULT_SUCCESS_MESSAGE']);

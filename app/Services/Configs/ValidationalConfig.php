@@ -4,8 +4,14 @@ namespace App\Services\Configs;
 
 use App\Services\Configs\Config;
 
+/**
+ * Defines default settings for any validation possible.
+ */
 abstract class ValidationalConfig extends Config {
-    protected function init() {
+    /**
+     * @see Config::init
+     */
+    protected function init(): Array {
         return [
             'DEFAULT_SUCCESS_MESSAGE' => 'Looks good!',
             'DEFAULT_FAIL_MESSAGE' => 'Invalid!',
