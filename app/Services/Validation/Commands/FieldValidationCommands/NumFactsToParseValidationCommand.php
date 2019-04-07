@@ -1,12 +1,24 @@
 <?php
+/**
+ * @package App\Services\Validation\Commands\FieldValidationCommands
+ */
 
 namespace App\Services\Validation\Commands\FieldValidationCommands;
 
 use App\Services\Validation\Commands\FieldValidationCommands\FieldValidationCommand;
 use App\Services\Validation\SimpleVal;
 
+/**
+ * Validates "number if facts to parse" param
+ * @uses App\Services\Validation\SimpleVal
+ */
 class NumFactsToParseValidationCommand extends FieldValidationCommand { 
+    /**
+     * Validates data.
+     * @see Command::execute
+     */
     public function execute() {
+        // Emptiness check
         $is_empty = SimpleVal::isEmpty($this->content, $this->isRequired);
         
         if ($is_empty === true) {
@@ -14,11 +26,13 @@ class NumFactsToParseValidationCommand extends FieldValidationCommand {
         } elseif ($is_empty === -1) {
             return $this->success($this->cfg['DEFAULT_SUCCESS_MESSAGE']);
         }
-
+        
+        // If integer given
         if (!SimpleVal::isInteger($this->content)) {
             return $this->fail($this->cfg['INVALID_FACT_NUMBER_TYPE_MESSAGE']);
         }
 
+        // Checks the number to fulfill an appropriate limit
         if (!SimpleVal::isFitLimit(
                 $this->content,
                 $this->cfg['MIN_NUM_TO_PARSE'],
