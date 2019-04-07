@@ -35,7 +35,7 @@ abstract class ParseController extends Controller
      */
     public function index(Request $request) {
         $this->request = $request;
-        $validation_result = $this->setFormValidation($request);
+        $validation_result = $this->setGeneralValidation($request);
 
         $results_queue = $this->validator->executeAllCommands();
         while (!$results_queue->isEmpty()) {

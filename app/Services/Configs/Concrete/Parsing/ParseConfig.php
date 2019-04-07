@@ -11,7 +11,7 @@ class ParseConfig extends ValidationalConfig {
     /**
      * @see Config::init
      */
-    protected function init() {
+    protected function init(): Array {
         $c = parent::init();
 
         $c['CATEGORY_SUBJECT'] = 'CATEGORY PARAMETER';
