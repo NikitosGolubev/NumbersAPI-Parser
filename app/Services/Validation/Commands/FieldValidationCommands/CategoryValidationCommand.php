@@ -9,10 +9,10 @@ use App\Services\Validation\Commands\FieldValidationCommands\FieldValidationComm
 use App\Services\Validation\SimpleVal;
 
 /**
- * Validates "number if facts to parse" param
+ * Validates category field
  * @uses App\Services\Validation\SimpleVal
  */
-class NumFactsToParseValidationCommand extends FieldValidationCommand { 
+class CategoryValidationCommand extends FieldValidationCommand {
     /**
      * Validates data.
      * @see Command::execute
@@ -26,20 +26,10 @@ class NumFactsToParseValidationCommand extends FieldValidationCommand {
         } elseif ($is_empty === -1) {
             return $this->success($this->cfg['DEFAULT_SUCCESS_MESSAGE']);
         }
-        
-        // If integer given
-        if (!SimpleVal::isInteger($this->content)) {
-            return $this->fail($this->cfg['INTEGERS_ONLY_MESSAGE']);
-        }
 
-        // Checks the number to fulfill an appropriate limit
-        if (!SimpleVal::isFitLimit(
-                $this->content,
-                $this->cfg['MIN_NUM_TO_PARSE'],
-                $this->cfg['MAX_NUM_TO_PARSE']
-            )
-        ) {
-            return $this->fail($this->cfg['INVALID_NUMBERS_GAP_MESSAGE']);
+        // Checks if category exists
+        if (!in_array($this->content, $this->cfg['CATEGORIES'])) {
+            return $this->fail($this->cfg['INVALID_CATEGORY_MESSAGE']);
         }
 
         return $this->success($this->cfg['DEFAULT_SUCCESS_MESSAGE']);

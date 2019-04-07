@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Parsing;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Parsing\ParseController;
-use App\Services\Validation\Commands\FieldValidationCommands\ValidateCategoryCommand;
+use App\Services\Validation\Commands\FieldValidationCommands\CategoryValidationCommand;
 use App\Services\Validation\Commands\FieldValidationCommands\NumFactsToParseValidationCommand;
 
 /**
@@ -16,27 +16,25 @@ class NumOfFactsController extends ParseController
      * @see parent::setGeneralValidation
      */
     protected function setGeneralValidation() {
-
         $this->setCategoryValidation();
         $this->setNumFactsToParseValidation();
-        
     }
 
     /**
-     * Sets validation for 'category' field
+     * Sets validation for 'category' param
      */
     private function setCategoryValidation() {
         $this->setParamValidation(
             'category',
             $this->cfg['CATEGORY_SUBJECT'],
             function ($content, $subject, $cfg, $is_required) {
-                return new ValidateCategoryCommand($content, $subject, $cfg, $is_required);
+                return new CategoryValidationCommand($content, $subject, $cfg, $is_required);
             }
         );
     }
 
     /**
-     * Sets validation for 'number of facts to parse' field
+     * Sets validation for 'number of facts to parse' param
      */
     private function setNumFactsToParseValidation() {
         $this->setParamValidation(

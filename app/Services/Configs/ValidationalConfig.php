@@ -15,7 +15,8 @@ abstract class ValidationalConfig extends Config {
         return [
             'DEFAULT_SUCCESS_MESSAGE' => 'Looks good!',
             'DEFAULT_FAIL_MESSAGE' => 'Invalid!',
-            'DEFAULT_EMPTINESS_MESSAGE' => 'Empty! Provide appropriate data.'
+            'DEFAULT_EMPTINESS_MESSAGE' => 'Empty! Provide appropriate data.',
+            'INTEGERS_ONLY_MESSAGE' => "Only integers allowed."
         ];
     }
 }

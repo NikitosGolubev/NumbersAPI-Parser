@@ -7,6 +7,8 @@
 namespace App\Services\Validation\Commands\FieldValidationCommands;
 
 use App\Services\Validation\Commands\FieldValidationCommands\FieldValidationCommand;
+// Just a frequently needed lib
+// use App\Services\Validation\SimpleVal;
 
 /**
  * JUST AN EXAMPLE. A TEMPLATE TO CREATE CONCRETE VALIDATIONAL COMMANDS FASTER.

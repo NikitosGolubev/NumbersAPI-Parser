@@ -35,8 +35,6 @@ class ParseConfig extends ValidationalConfig {
         "You can only provide numbers from ".$c['MIN_FACT_NUMBER'].
         " to ".$c['MAX_FACT_NUMBER'].".";
 
-        $c['INVALID_FACT_NUMBER_TYPE_MESSAGE'] = "Only integers allowed.";
-
         return $c;
     }
 }
