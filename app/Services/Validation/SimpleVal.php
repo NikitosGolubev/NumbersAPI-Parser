@@ -48,5 +48,25 @@ class SimpleVal {
      */
     public static function isFitLimit($value, $min = -INF, $max = INF) {
         return ($value >= $min && $value <= $max);
-    } 
+    }
+
+    /**
+     * Checks if given value is an array after JSON decoding.
+     * @param  mixed  $value
+     * @return boolean
+     */
+    public static function isJSONArray($value) {
+        $to_json = json_decode($value);
+        return (!is_null($to_json) && is_array($to_json));
+    }
+
+    /**
+     * Checks if an array contains any duplicates.
+     * @param  Array $arr
+     * @return boolean
+     */
+    public static function hasDuplicatesInArr(Array $arr) {
+        $without_duplicates = array_unique($arr);
+        return (count($arr) !== count($without_duplicates));
+    }
 }

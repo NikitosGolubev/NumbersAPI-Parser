@@ -123,5 +123,5 @@
 @section('footer', '')
 
 @section('scripts')
-    {{-- <script src='/{{ env('TEMPLATE_DIR') }}/js/build/mvc-starters/forms-validation.js'></script> --}}
+    <script src='/{{ env('TEMPLATE_DIR') }}/js/build/mvc-starters/forms-validation.js'></script>
 @endsection
