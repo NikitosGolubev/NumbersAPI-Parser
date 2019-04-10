@@ -48,16 +48,35 @@ class Validator {
 
     /**
      * Executes all the commands from the queue. (Which user set before)
-     * @return SplQueue Queue of validation results.
-     *     In the same order validational commands were set.
+     * @return Array of validation results.
      */
-    public function executeAllCommands() {
-        $val_results_queue = new SplQueue;
+    public function executeAllCommands(): Array {
+        $val_results = [];
         while (!$this->commandsQueue->isEmpty()) {
             $command = $this->commandsQueue->dequeue();
-            $val_result = $command->execute();
-            $val_results_queue->enqueue($val_result);
+            $exec_result = $command->execute();
+            $val_results[] = $exec_result;
         }
-        return $val_results_queue;
+        return $val_results;
+    }
+
+    /**
+     * Finds the common result for validations.
+     * @param  Array $validation_results Validations performed.
+     * @return Boolean
+     */
+    public function getGeneralValidationResult(Array $validation_results) {
+        /*
+          If all validations had gone well, than general result is true,
+          if at least one of them failed, than general result is false.
+         */
+        $generalValResult = true;
+        for ($i = 0; $i < count($validation_results); $i++) {
+            if (!$validation_results[$i]['result']) {
+                $generalValResult = false;
+                break;
+            }
+        }
+        return $generalValResult;
     }
 }

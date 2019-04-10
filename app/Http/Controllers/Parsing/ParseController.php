@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Validation\Validator;
 use App\Services\Configs\Concrete\Parsing\ParseConfig;
+use App\Services\ValidationPresentation\FailValidationPresenter;
 
 /**
  * This is common controller for all parse requests.
@@ -37,9 +38,12 @@ abstract class ParseController extends Controller
         $this->request = $request;
         $validation_result = $this->setGeneralValidation($request);
 
-        $results_queue = $this->validator->executeAllCommands();
-        while (!$results_queue->isEmpty()) {
-            var_dump($results_queue->dequeue());
+        $val_results = $this->validator->executeAllCommands();
+        $generalValResult = $this->validator->getGeneralValidationResult($val_results);
+
+        if (!$generalValResult) {
+            $validation_presenter = new FailValidationPresenter;
+            return $validation_presenter->display($val_results);
         }
     }
 
