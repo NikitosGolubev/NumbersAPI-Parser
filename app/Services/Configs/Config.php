@@ -23,7 +23,7 @@ abstract class Config {
      * Defines configurational storage
      * @return Array
      */
-    abstract protected function init(): Array;
+    abstract protected function init(): array;
 
     public function getConfig() {
         return $this->c;

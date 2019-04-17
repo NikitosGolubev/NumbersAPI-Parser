@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Parsing;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Parsing\ParseController;
+use App\Http\Controllers\Parsing\FactsParsingController;
 use App\Services\Validation\Commands\FieldValidationCommands\CategoryValidationCommand;
 use App\Services\Validation\Commands\FieldValidationCommands\FactNumberValidationCommand;
 use App\Services\Validation\Commands\FieldValidationCommands\FactNumbersDifferenceValidationCommand;
@@ -11,10 +11,24 @@ use App\Services\Validation\Commands\FieldValidationCommands\FactNumbersDifferen
 /**
  * Responsible for handling data of 'Range of fact numbers to parse' form
  */
-class FactNumInRangeController extends ParseController
+class FactNumInRangeController extends FactsParsingController
 {
+    // Request params
+    private $categoryPrm;
+    private $fromFactNumberPrm;
+    private $toFactNumberPrm;
+
     /**
-     * @see parent::setGeneralValidation
+     * @see parent::defineParams()
+     */
+    protected function defineParams() {
+        $this->categoryPrm = $this->request->input('category');
+        $this->fromFactNumberPrm = $this->request->input('from');
+        $this->toFactNumberPrm = $this->request->input('to');
+    }
+
+    /**
+     * @see parent::setGeneralValidation()
      */
     protected function setGeneralValidation() {
         $this->setCategoryValidation();
@@ -24,15 +38,46 @@ class FactNumInRangeController extends ParseController
     }
 
     /**
+     * @see parent::prepareDataForParsing()
+     */
+    protected function prepareDataForParsing()
+    {
+        // Bringing categories to the right format
+        $categories = $this->defineCategoriesArray($this->categoryPrm);
+        $numbers = [];
+
+        // Defining which $from and $to points depend on which param is greater
+        // If "a" param is greater than "b", than "b" is "from" and "a" is "to"
+        if ($this->fromFactNumberPrm > $this->toFactNumberPrm) {
+            $from = $this->toFactNumberPrm;
+            $to = $this->fromFactNumberPrm;
+        } else {
+            $from = $this->fromFactNumberPrm;
+            $to = $this->toFactNumberPrm;
+        }
+
+        // Filling numbers array with content
+        while ($from <= $to) {
+            $numbers[] = $from;
+            $from++;
+        }
+
+        // Assigning categories to numbers and getting appropriate parsing data
+        $data_to_parse = $this->linkNumbersWithRandomCategories($numbers, $categories);
+
+        return $data_to_parse;
+    }
+
+    /**
      * Sets validation for 'category' param
      */
     private function setCategoryValidation() {
-        $this->setParamValidation(
-            'category',
-            $this->cfg['CATEGORY_SUBJECT'],
-            function ($content, $subject, $cfg, $is_required) {
-                return new CategoryValidationCommand($content, $subject, $cfg, $is_required);
-            }
+        $content = $this->categoryPrm;
+        $subject = $this->cfg['CATEGORY_SUBJECT'];
+        $is_required = true;
+
+        $this->validator->setCommand(
+            new CategoryValidationCommand($content, $subject, $this->cfg, $is_required)
         );
     }
 
@@ -40,12 +85,12 @@ class FactNumInRangeController extends ParseController
      * Sets validation for 'parse facts FROM fact number' param
      */
     private function setFromFactNumberValidation() {
-        $this->setParamValidation(
-            'from',
-            '"FROM" fact number',
-            function ($content, $subject, $cfg, $is_required) {
-                return new FactNumberValidationCommand($content, $subject, $cfg, $is_required);
-            }
+        $content = $this->fromFactNumberPrm;
+        $subject = '"FROM" fact number';
+        $is_required = true;
+
+        $this->validator->setCommand(
+            new FactNumberValidationCommand($content, $subject, $this->cfg, $is_required)
         );
     }
 
@@ -53,12 +98,12 @@ class FactNumInRangeController extends ParseController
      * Sets validation for 'parse facts TO fact number' param
      */
     private function setToFactNumberValidation() {
-        $this->setParamValidation(
-            'to',
-            '"TO" fact number',
-            function ($content, $subject, $cfg, $is_required) {
-                return new FactNumberValidationCommand($content, $subject, $cfg, $is_required);
-            }
+        $content = $this->toFactNumberPrm;
+        $subject = '"TO" fact number';
+        $is_required = true;
+
+        $this->validator->setCommand(
+            new FactNumberValidationCommand($content, $subject, $this->cfg, $is_required)
         );
     }
 
@@ -66,12 +111,11 @@ class FactNumInRangeController extends ParseController
      * Validates difference btw given numbers
      */
     private function setFactNumbersDifferenceValidation() {
-        $this->setDataValidation(
-            ['from' => $this->request->input('from'), 'to' => $this->request->input('to')],
-            'Difference btw "FROM" and "TO" fact numbers',
-            function ($content, $subject, $cfg, $is_required) {
-                return new FactNumbersDifferenceValidationCommand($content, $subject, $cfg, $is_required);
-            }
+        $content = ['from' => $this->fromFactNumberPrm, 'to' => $this->toFactNumberPrm];
+        $subject = 'Difference btw "FROM" and "TO" fact numbers';
+
+        $this->validator->setCommand(
+            new FactNumbersDifferenceValidationCommand($content, $subject, $this->cfg)
         );
     }
 }

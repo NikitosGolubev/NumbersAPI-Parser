@@ -48,9 +48,9 @@ class Validator {
 
     /**
      * Executes all the commands from the queue. (Which user set before)
-     * @return Array of validation results.
+     * @return array of validation results.
      */
-    public function executeAllCommands(): Array {
+    public function executeAllCommands(): array {
         $val_results = [];
         while (!$this->commandsQueue->isEmpty()) {
             $command = $this->commandsQueue->dequeue();
@@ -62,7 +62,7 @@ class Validator {
 
     /**
      * Finds the common result for validations.
-     * @param  Array $validation_results Validations performed.
+     * @param  array $validation_results Validations performed.
      * @return Boolean
      */
     public function getGeneralValidationResult(Array $validation_results) {

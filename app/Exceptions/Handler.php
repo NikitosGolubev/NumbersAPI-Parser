@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use GuzzleHttp\Exception\GuzzleException;
 
 class Handler extends ExceptionHandler
 {
@@ -54,6 +55,10 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof NotFoundHttpException) {
             return redirect()->route('error.404');
+        }
+
+        if ($exception instanceof GuzzleException) {
+            return redirect()->route('error.520');
         }
 
         return parent::render($request, $exception);

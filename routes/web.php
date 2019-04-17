@@ -24,4 +24,5 @@ Route::prefix('parse')->group(function () {
 Route::group(['as' => 'error.', 'prefix' => 'error'], function () {
     Route::get('403', 'ErrorsController@show403')->name('403');
     Route::get('404', 'ErrorsController@show404')->name('404');
+    Route::get('520', 'ErrorsController@show520')->name('520');
 });

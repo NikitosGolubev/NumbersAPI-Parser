@@ -25,7 +25,7 @@ abstract class FieldValidationCommand implements Command, ResponseResult {
 
     /**
      * Config for validation
-     * @var Array
+     * @var array
      */
     protected $cfg;
 
@@ -37,7 +37,7 @@ abstract class FieldValidationCommand implements Command, ResponseResult {
 
     /**
      * Name of validated parameter. How to call it.
-     * @var [type]
+     * @var string
      */
     private $subjectName;
 
@@ -49,8 +49,8 @@ abstract class FieldValidationCommand implements Command, ResponseResult {
 
     public function __construct(
         $content,
-        String $subject_name,
-        Array $cfg,
+        string $subject_name,
+        array $cfg,
         $is_required = true
     ) {
         $this->content = $content;

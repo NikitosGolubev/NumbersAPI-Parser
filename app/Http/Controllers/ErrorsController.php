@@ -36,4 +36,17 @@ class ErrorsController extends Controller
 
         return view('errors.main', $error_data);
     }
+
+    /**
+     * Displays 520 HTTP response (UNKNOWN ERROR).
+     */
+    public function show520() {
+        $error_data = [
+            'code' => 520,
+            'status' => 'UNKNOWN ERROR',
+            'message' => 'Just something went wrong. Try the same operation later.'
+        ];
+
+        return view('errors.main', $error_data);
+    }
 }

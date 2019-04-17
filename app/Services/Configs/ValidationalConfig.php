@@ -11,7 +11,7 @@ abstract class ValidationalConfig extends Config {
     /**
      * @see Config::init
      */
-    protected function init(): Array {
+    protected function init(): array {
         return [
             'DEFAULT_SUCCESS_MESSAGE' => 'Looks good!',
             'DEFAULT_FAIL_MESSAGE' => 'Invalid!',
