@@ -9,7 +9,7 @@ use App\Services\Configs\ValidationalConfig;
  */
 class ParseConfig extends ValidationalConfig {
     /**
-     * @see Config::init
+     * @see Config::init()
      */
     protected function init(): array {
         $c = parent::init();
@@ -18,6 +18,13 @@ class ParseConfig extends ValidationalConfig {
         $c['NUM_OF_FACTS_SUBJECT'] = 'NUMBER OF FACTS TO PARSE';
 
         $c['CATEGORIES'] = ['random', 'trivia', 'year', 'date', 'math'];
+
+        $c['DB_CATEGORIES'] = [
+            'trivia' => 'common',
+            'year' => 'year',
+            'date' => 'date',
+            'math' => 'math'
+        ];
 
         $c['MIN_NUM_TO_PARSE'] = 1;
         $c['MAX_NUM_TO_PARSE'] = 100;

@@ -57,9 +57,13 @@ abstract class Parser
         $request = $data['request'];
 
         $response = $this->singleParse($client, $request);
-        $result = $response->getBody()->getContents();
+        $parsed_content = $response->getBody()->getContents();
 
-        return ["result" => $result];
+        $parsed_content = $this->parseResponseMutator($parsed_content);
+
+        $result = [$parsed_content];
+
+        return $result;
     }
 
     /**
@@ -75,14 +79,17 @@ abstract class Parser
         foreach ($parsing_generator as $parsing_result) {
             foreach ($parsing_result as $parsing_item) {
                 if (isset($parsing_item['value'])) {
-                    $result[] = $parsing_item['value']->getBody()->getContents();
+                    $parsed_content = $parsing_item['value']->getBody()->getContents();
+                    $parsed_content = $this->parseResponseMutator($parsed_content);
+
+                    $result[] = $parsed_content;
                 }
             }
             // Timeouts between requests
             sleep($this->requestsDelaySec);
         }
 
-        return ['result' => $result];
+        return $result;
     }
 
     /**
@@ -93,6 +100,15 @@ abstract class Parser
      * @return array
      */
     abstract protected function formDataForParsing($data): array;
+
+    /**
+     * Function for adjusting parsing response.
+     * (Example: converting to particular data structure).
+     * (may be overridden by children classes).
+     *
+     * @param mixed $parse_data
+     */
+    protected function parseResponseMutator($parse_data) {}
 
     /**
      * Performs parsing of single request.

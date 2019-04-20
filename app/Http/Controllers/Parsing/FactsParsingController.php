@@ -10,10 +10,17 @@ use App\Services\Configs\Concrete\Parsing\ParseConfig;
 use App\Services\ValidationPresentation\FailValidationPresenter;
 use App\Services\Parsing\Parser;
 use App\Services\Parsing\DefaultFactsParser;
+use App\Services\ComplexDbLoaders\ConcreteLoaders\DefaultFactAndNumberLoader;
 
 /**
  * This is common controller for all parse requests.
  * It's abstract.
+ * @uses Validator
+ * @uses ParseConfig
+ * @uses FailValidationPresenter
+ * @uses Parser
+ * @uses DefaultFactsParser
+ * @uses DefaultFactAndNumberLoader
  */
 abstract class FactsParsingController extends Controller
 {
@@ -33,12 +40,19 @@ abstract class FactsParsingController extends Controller
      * @var Parser
      */
     protected $parser;
+
+    /**
+     * Object which would load parsed data in the database.
+     * @var DbLoader
+     */
+    protected $dbLoader;
     protected $request;
 
     public function __construct() {
         $this->validator = new Validator;
         $this->cfg = (new ParseConfig)->getConfig();
         $this->parser = new DefaultFactsParser;
+        $this->dbLoader = new DefaultFactAndNumberLoader;
     }
 
     public function setConfig(ParseConfig $cfg) {
@@ -72,7 +86,16 @@ abstract class FactsParsingController extends Controller
         $data_for_parsing = $this->prepareDataForParsing();
         $this->adjustParserSettings();
         $parsing_result = $this->parser->parse($data_for_parsing);
-        dd($parsing_result);
+
+        $reports = [];
+        if (!empty($parsing_result)) {
+            foreach ($parsing_result as $fact) {
+                $report = $this->dbLoader->load($fact);
+                $reports[] = $report;
+            }
+        } else $reports = false;
+
+        dd($reports);
     }
 
     /**
@@ -97,6 +120,7 @@ abstract class FactsParsingController extends Controller
      * @return mixed Data, which may be send for parsing.
      */
     abstract protected function prepareDataForParsing();
+
 
     /**
      * Empty method, which may be overridden to adjust the parsing settings.

@@ -40,4 +40,14 @@ class DefaultFactsParser extends Parser
 
         return $promises;
     }
+
+    /**
+     * Decoding JSON in derived response.
+     * @param string $parse_data
+     * @return object
+     */
+    protected function parseResponseMutator($parse_data)
+    {
+        return json_decode($parse_data);
+    }
 }
