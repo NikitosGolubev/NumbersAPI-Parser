@@ -6,7 +6,7 @@
 /**
  * Abstract view class which describes interface and common methods
  */
-export default class View {
+class View {
     /**
      * Receives updates from Subject. (part of OBSERVER pattern).
      * 
@@ -16,3 +16,5 @@ export default class View {
         throw new Error('This is abstract method which requires implementation.');
     }
 }
+
+export default View;

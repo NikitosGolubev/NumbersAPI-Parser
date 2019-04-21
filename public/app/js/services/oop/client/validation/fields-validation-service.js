@@ -10,7 +10,7 @@ import DefaultFieldValidationResponseService from '../../validation/validation-r
  * fields validation services.
  * @uses NikitosGolubev\Services\OOP\Validation\ValidationResponses\DefaultFieldValidationResponseService
  */
-export default class FieldsValidationService {
+class FieldsValidationService {
     constructor() {
         /**
          * Service which produces response for field validation
@@ -35,3 +35,5 @@ export default class FieldsValidationService {
         this.validator = validator;
     }
 }
+
+export default FieldsValidationService;

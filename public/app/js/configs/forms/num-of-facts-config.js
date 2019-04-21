@@ -9,7 +9,7 @@ import Config from '../config';
  * Config class for 'num of facts' form
  * @uses NikitosGolubev\Configs\Config
  */
-export default class NumOfFactsConfig extends Config {
+class NumOfFactsConfig extends Config {
     /**
      * Selector which specifies 'num of facts' form
      * 
@@ -43,3 +43,5 @@ export default class NumOfFactsConfig extends Config {
         return '.js-num-of-facts-form__num-of-facts';
     }
 }
+
+export default NumOfFactsConfig;

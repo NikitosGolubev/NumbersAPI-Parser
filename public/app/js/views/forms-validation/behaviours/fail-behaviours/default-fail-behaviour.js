@@ -10,7 +10,7 @@ import iziToast from "izitoast";
  * Describes actions that should be taken by default if fields validation failed
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours\FailBehaviourInterface
  */
-export default class DefaultFailBehaviour extends FailBehaviourInterface {
+class DefaultFailBehaviour extends FailBehaviourInterface {
     /**
      * @see FailBehaviourInterface fail() method
      * @param {Object} fieldValResult Fields validation responsed
@@ -31,3 +31,5 @@ export default class DefaultFailBehaviour extends FailBehaviourInterface {
         });
     }
 }
+
+export default DefaultFailBehaviour;

@@ -9,7 +9,7 @@ import SuccessBehaviourInterface from "./success-behaviour-interface";
  * Describes actions that should be taken by default if fields validation succeeded
  * @uses NikitosGolubev\Views\FormsValidation\Behaviours\SuccessBehaviours\SuccessBehaviourInterface
  */
-export default class DefaultSuccessBehaviour extends SuccessBehaviourInterface {
+class DefaultSuccessBehaviour extends SuccessBehaviourInterface {
     /**
      * @see SuccessBehaviourInterface success() method
      * @param {Object} fieldValResult Fields validation response
@@ -20,3 +20,5 @@ export default class DefaultSuccessBehaviour extends SuccessBehaviourInterface {
         // the state it was. 
     }
 }
+
+export default DefaultSuccessBehaviour;

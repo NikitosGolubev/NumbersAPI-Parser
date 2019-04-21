@@ -9,7 +9,7 @@
  * Other words, the methods from this class may be applied
  * for validation of vast range of fields.
  */
-export default class ValidationService {
+class ValidationService {
     /**
      * Checks if fields value is set or not.
      * @param  {Object}  field DOM
@@ -55,3 +55,5 @@ export default class ValidationService {
         return arr.includes(val);
     }
 }
+
+export default ValidationService;

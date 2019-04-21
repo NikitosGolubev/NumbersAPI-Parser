@@ -7,6 +7,7 @@ import FormsValidationController from '../forms-validation-controller';
 import ParticularFactNumbersModel from '../../../models/forms-validation/forms-models/particular-fact-numbers';
 import ParticularFactNumbersView from '../../../views/forms-validation/forms-views/particular-fact-numbers';
 import { findParentByClassName } from '../../../services/functional/client/dom-service';
+
 /**
  * Provides API to validate "particular fact numbers" form on index page
  * 
@@ -15,7 +16,7 @@ import { findParentByClassName } from '../../../services/functional/client/dom-s
  * @uses NikitosGolubev\Views\FormsValidation\FormsViews\ParticularFactNumbersView
  * @uses NikitosGolubev\Services\Functional\Client\DomService
  */
-export default class ParticularFactNumbersController extends FormsValidationController {
+class ParticularFactNumbersController extends FormsValidationController {
     constructor() {
         let model = new ParticularFactNumbersModel;
         let view = new ParticularFactNumbersView(model);
@@ -55,3 +56,5 @@ export default class ParticularFactNumbersController extends FormsValidationCont
         }
     }
 }
+
+export default ParticularFactNumbersController;

@@ -15,7 +15,7 @@ import FormConf from '../../../configs/forms/fact-num-in-range-config';
  * @uses NikitosGolubev\Services\Functional\Client\DomService
  * @uses NikitosGolubev\Configs\Forms\FactNumInRangeConfig as FormConf
  */
-export default class FactNumInRangeModel extends FormsValidationModel {
+class FactNumInRangeModel extends FormsValidationModel {
     constructor() {
         super();
         this.validator = new ParseFactsFieldsValidationService;
@@ -47,3 +47,5 @@ export default class FactNumInRangeModel extends FormsValidationModel {
         super.validate(event, ...validationResponses);
     }
 }
+
+export default FactNumInRangeModel;

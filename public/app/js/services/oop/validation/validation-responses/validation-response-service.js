@@ -9,7 +9,7 @@ import { cloneDeep } from 'lodash';
  * Base validation response, may be inheritated by other valid. responses
  * @using cloneDeep() form lodash
  */
-export default class ValidationResponseService {
+class ValidationResponseService {
     constructor() {
         /**
          * Response storage
@@ -57,3 +57,5 @@ export default class ValidationResponseService {
         return response;
     }
 }
+
+export default ValidationResponseService;

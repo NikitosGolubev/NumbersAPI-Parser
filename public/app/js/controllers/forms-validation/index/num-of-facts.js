@@ -14,7 +14,7 @@ import NumOfFactsView from '../../../views/forms-validation/forms-views/num-of-f
  * @uses NikitosGolubev\Models\FormsValidation\FormsModels\NumOfFactsModel
  * @uses NikitosGolubev\Views\FormsValidation\FormsViews\NumOfFactsView
  */
-export default class NumOfFactsController extends FormsValidationController {
+class NumOfFactsController extends FormsValidationController {
     constructor() {
         let model = new NumOfFactsModel;
         let view = new NumOfFactsView(model);
@@ -28,3 +28,5 @@ export default class NumOfFactsController extends FormsValidationController {
         this.model.validate(event);
     }
 }
+
+export default NumOfFactsController;

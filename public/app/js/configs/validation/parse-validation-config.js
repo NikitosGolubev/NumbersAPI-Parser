@@ -9,7 +9,7 @@ import ValidationConfig from './validation-config';
  * Config for parse validation forms
  * @uses NikitosGolubev\Configs\Validation\ValidationConfig
  */
-export default class ParseValidationConfig extends ValidationConfig {
+class ParseValidationConfig extends ValidationConfig {
     /**
      * Returns min value of fact number that could be parsed
      * 
@@ -89,3 +89,5 @@ export default class ParseValidationConfig extends ValidationConfig {
         return `You've already passed this number.`;
     }
 }
+
+export default ParseValidationConfig;

@@ -7,7 +7,7 @@
  * Fundamental abstract model.
  * SUBJECT - part of Observer pattern.
  */
-export default class Model {
+class Model {
     constructor() {
         /**
          * Model observers (view objects)
@@ -60,3 +60,5 @@ export default class Model {
         }
     }
 }
+
+export default Model;

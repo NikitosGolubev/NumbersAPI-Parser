@@ -9,7 +9,7 @@ import Config from '../config';
  * Config class for 'particular fact numbers' form
  * @uses NikitosGolubev\Configs\Config
  */
-export default class ParticularFactNumbersConfig extends Config {
+class ParticularFactNumbersConfig extends Config {
     /**
      * Selector which specifies 'particular fact numbers' form
      * 
@@ -104,3 +104,5 @@ export default class ParticularFactNumbersConfig extends Config {
         return `js-number-container`;
     }
 }
+
+export default ParticularFactNumbersConfig;

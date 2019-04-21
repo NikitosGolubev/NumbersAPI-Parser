@@ -7,7 +7,7 @@
  * Base controller, which should be inheritated by other controllers.
  * Abstract class.
  */
-export default class Controller {
+class Controller {
     constructor(model, view) {
     	try {
     	    if (!model || !view) {
@@ -27,3 +27,5 @@ export default class Controller {
      */
     getView() { return this.view; }
 }
+
+export default Controller;

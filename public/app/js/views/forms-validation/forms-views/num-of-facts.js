@@ -12,7 +12,7 @@ import NumOfFactsConfig from '../../../configs/forms/num-of-facts-config';
  * @uses NikitosGolubev\Services\Functional\Client\DomService
  * @uses NikitosGolubev\Configs\Forms\NumOfFactsConfig
  */
-export default class NumOfFactsView extends FormsValidationView {
+class NumOfFactsView extends FormsValidationView {
     constructor(model,  $failBehaviour = false, $successBehaviour = false) {
         super(model, $failBehaviour, $successBehaviour);
     }
@@ -30,3 +30,5 @@ export default class NumOfFactsView extends FormsValidationView {
      */
     getForm() { return this.form; }
 }
+
+export default NumOfFactsView;

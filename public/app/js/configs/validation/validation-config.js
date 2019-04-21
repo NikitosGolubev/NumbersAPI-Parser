@@ -9,7 +9,7 @@ import Config from '../config';
  * Common validation config
  * @uses NikitosGolubev\Configs\Config
  */
-export default class ValidationConfig extends Config {
+class ValidationConfig extends Config {
     /**
      * Default message, which may appear if validation succeeded
      *
@@ -54,3 +54,5 @@ export default class ValidationConfig extends Config {
         return 'Pass <b>integer</b> please';
     }
 }
+
+export default ValidationConfig;

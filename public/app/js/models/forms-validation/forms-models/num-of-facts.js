@@ -15,7 +15,7 @@ import FormConf from '../../../configs/forms/num-of-facts-config';
  * @uses NikitosGolubev\Services\Functional\Client\DomService
  * @uses NikitosGolubev\Configs\Forms\NumOfFactsConfig as FormConf
  */
-export default class NumOfFactsModel extends FormsValidationModel {
+class NumOfFactsModel extends FormsValidationModel {
     constructor() {
         super();
         this.validator = new ParseFactsFieldsValidationService;
@@ -32,3 +32,5 @@ export default class NumOfFactsModel extends FormsValidationModel {
         super.validate(event, categoryVal, numOfFactsVal);
     }
 }
+
+export default NumOfFactsModel;

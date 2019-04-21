@@ -9,7 +9,7 @@ import Model from '../model';
  * Abstract model for validating forms
  * @uses NikitosGolubev\Models\Model
  */
-export default class FormsValidationModel extends Model {
+class FormsValidationModel extends Model {
     constructor() {
         super();
     }
@@ -47,3 +47,5 @@ export default class FormsValidationModel extends Model {
         }
     }
 }
+
+export default FormsValidationModel;

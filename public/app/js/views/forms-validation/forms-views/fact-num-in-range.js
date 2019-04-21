@@ -10,7 +10,7 @@ import { $ } from '../../../services/functional/client/dom-service';
  * @uses NikitosGolubev\Views\FormsValidation\FormsValidationView
  * @uses NikitosGolubev\Services\Functional\Client\DomService
  */
-export default class FactNumInRangeView extends FormsValidationView {
+class FactNumInRangeView extends FormsValidationView {
     constructor(model,  $failBehaviour = false, $successBehaviour = false) {
         super(model, $failBehaviour, $successBehaviour);
     }
@@ -28,3 +28,5 @@ export default class FactNumInRangeView extends FormsValidationView {
      */
     getForm() { return this.form; }
 }
+
+export default FactNumInRangeView;

@@ -6,7 +6,7 @@
 /**
  * Provides methods to create ui elements for parsing forms
  */
-export default class ParseFormsUIFactory {
+class ParseFormsUIFactory {
     /**
      * Creates fact number label for numbers storage.
      * @param  {Number} factNumber
@@ -51,3 +51,5 @@ export default class ParseFormsUIFactory {
         return numberElement;
     }
 }
+
+export default ParseFormsUIFactory;

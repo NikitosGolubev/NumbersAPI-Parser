@@ -14,7 +14,7 @@ import ParseFormsUIFactory from '../../../services/oop/ui-factories/parse-forms-
  * @uses NikitosGolubev\Configs\Forms\ParticularFactNumbersConfig
  * @uses NikitosGolubev\Services\OOP\UIFactories\ParseFormsUIFactory
  */
-export default class ParticularFactNumbersView extends FormsValidationView {
+class ParticularFactNumbersView extends FormsValidationView {
     constructor(model,  $failBehaviour = false, $successBehaviour = false) {
         super(model, $failBehaviour, $successBehaviour);
         this.model.registerNSObserver(this);
@@ -189,3 +189,5 @@ export default class ParticularFactNumbersView extends FormsValidationView {
 
     getNumberContainerClassName() { return this.numberContainerClassName; }
 }
+
+export default ParticularFactNumbersView;

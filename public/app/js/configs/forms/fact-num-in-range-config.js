@@ -9,7 +9,7 @@ import Config from '../config';
  * Config class for 'fact number in range' form
  * @uses NikitosGolubev\Configs\Config
  */
-export default class FactNumInRangeConfig extends Config {
+class FactNumInRangeConfig extends Config {
     /**
      * Selector which specifies 'num of facts' form
      * 
@@ -54,3 +54,5 @@ export default class FactNumInRangeConfig extends Config {
         return '.js-fact-num-in-range-form__to';
     }
 }
+
+export default FactNumInRangeConfig;

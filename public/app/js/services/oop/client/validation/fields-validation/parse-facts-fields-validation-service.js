@@ -13,7 +13,7 @@ import ValidationService from '../../../validation/validation-service';
  * @uses NikitosGolubev\Configs\Validation\ParseValidationConfig as ValConf
  * @uses NikitosGolubev\Services\OOP\Validation\ValidationService
  */
-export default class ParseFactsFieldsValidationService extends FieldsValidationService {
+class ParseFactsFieldsValidationService extends FieldsValidationService {
     constructor() {
         super();
         this.validator = new ValidationService;
@@ -166,3 +166,5 @@ export default class ParseFactsFieldsValidationService extends FieldsValidationS
         return this.rb.success($fieldName); 
     }
 }
+
+export default ParseFactsFieldsValidationService;

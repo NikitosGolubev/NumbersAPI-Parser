@@ -15,7 +15,7 @@ import FormConf from '../../../configs/forms/particular-fact-numbers-config';
  * @uses NikitosGolubev\Services\Functional\Client\DomService
  * @uses NikitosGolubev\Configs\Forms\ParticularFactNumbersConfig as FormConf
  */
-export default class ParticularFactNumbersModel extends FormsValidationModel {
+class ParticularFactNumbersModel extends FormsValidationModel {
     constructor() {
         super();
         this.validator = new ParseFactsFieldsValidationService;
@@ -76,3 +76,5 @@ export default class ParticularFactNumbersModel extends FormsValidationModel {
         }
     }
 }
+
+export default ParticularFactNumbersModel;

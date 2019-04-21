@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: views/forms-validation/behaviours/fail-behaviours/default-fail-behaviour.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: views/forms-validation/behaviours/fail-behaviours/default-fail-behaviour.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileOverview Default Fail Behaviour
+ * @namespace NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours
+ */
+
+import FailBehaviourInterface from "./fail-behaviour-interface";
+import iziToast from "izitoast";
+
+/**
+ * Describes actions that should be taken by default if fields validation failed
+ * @uses NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours\FailBehaviourInterface
+ */
+class DefaultFailBehaviour extends FailBehaviourInterface {
+    /**
+     * @see FailBehaviourInterface fail() method
+     * @param {Object} fieldValResult Fields validation responsed
+     * @return {Void}
+     */
+    fail(fieldValResult) {
+        iziToast.error({
+            title: `${fieldValResult.fieldName}:`,
+            message: fieldValResult.message,
+            position: 'topRight',
+            transitionOut: 'fadeOutDown',
+            transitionIn: 'bounceInRight',
+            closeOnEscape: true,
+            layout: 2,
+            overlay: true,
+            overlayClose: true,
+            timeout: 5000
+        });
+    }
+}
+
+export default DefaultFailBehaviour;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="-_.html">_</a></li><li><a href="Config.html">Config</a></li><li><a href="Controller.html">Controller</a></li><li><a href="DefaultFailBehaviour.html">DefaultFailBehaviour</a></li><li><a href="DefaultFieldValidationResponseService.html">DefaultFieldValidationResponseService</a></li><li><a href="DefaultSuccessBehaviour.html">DefaultSuccessBehaviour</a></li><li><a href="DomOptimizer.html">DomOptimizer</a></li><li><a href="FactNumInRangeConfig.html">FactNumInRangeConfig</a></li><li><a href="FactNumInRangeController.html">FactNumInRangeController</a></li><li><a href="FactNumInRangeModel.html">FactNumInRangeModel</a></li><li><a href="FactNumInRangeView.html">FactNumInRangeView</a></li><li><a href="FailBehaviourInterface.html">FailBehaviourInterface</a></li><li><a href="FieldsValidationService.html">FieldsValidationService</a></li><li><a href="FormsValidationController.html">FormsValidationController</a></li><li><a href="FormsValidationModel.html">FormsValidationModel</a></li><li><a href="FormsValidationView.html">FormsValidationView</a></li><li><a href="Model.html">Model</a></li><li><a href="NumOfFactsConfig.html">NumOfFactsConfig</a></li><li><a href="NumOfFactsController.html">NumOfFactsController</a></li><li><a href="NumOfFactsModel.html">NumOfFactsModel</a></li><li><a href="NumOfFactsView.html">NumOfFactsView</a></li><li><a href="ParseFactsFieldsValidationService.html">ParseFactsFieldsValidationService</a></li><li><a href="ParseFormsUIFactory.html">ParseFormsUIFactory</a></li><li><a href="ParseValidationConfig.html">ParseValidationConfig</a></li><li><a href="ParticularFactNumbersConfig.html">ParticularFactNumbersConfig</a></li><li><a href="ParticularFactNumbersController.html">ParticularFactNumbersController</a></li><li><a href="ParticularFactNumbersModel.html">ParticularFactNumbersModel</a></li><li><a href="ParticularFactNumbersView.html">ParticularFactNumbersView</a></li><li><a href="SuccessBehaviourInterface.html">SuccessBehaviourInterface</a></li><li><a href="ValidationConfig.html">ValidationConfig</a></li><li><a href="ValidationResponseService.html">ValidationResponseService</a></li><li><a href="ValidationService.html">ValidationService</a></li><li><a href="View.html">View</a></li></ul><h3>Namespaces</h3><ul><li><a href="NikitosGolubev.html">NikitosGolubev</a></li><li><a href="NikitosGolubev_Changers.html">NikitosGolubev\Changers</a></li><li><a href="NikitosGolubev_Configs.html">NikitosGolubev\Configs</a></li><li><a href="NikitosGolubev_Configs_Forms.html">NikitosGolubev\Configs\Forms</a></li><li><a href="NikitosGolubev_Configs_Validation.html">NikitosGolubev\Configs\Validation</a></li><li><a href="NikitosGolubev_Controllers.html">NikitosGolubev\Controllers</a></li><li><a href="NikitosGolubev_Controllers_FormsValidation.html">NikitosGolubev\Controllers\FormsValidation</a></li><li><a href="NikitosGolubev_Controllers_FormsValidation_Index.html">NikitosGolubev\Controllers\FormsValidation\Index</a></li><li><a href="NikitosGolubev_Models.html">NikitosGolubev\Models</a></li><li><a href="NikitosGolubev_Models_FormsValidation.html">NikitosGolubev\Models\FormsValidation</a></li><li><a href="NikitosGolubev_Models_FormsValidation_FormsModels.html">NikitosGolubev\Models\FormsValidation\FormsModels</a></li><li><a href="NikitosGolubev_Services_Functional.html">NikitosGolubev\Services\Functional</a></li><li><a href="NikitosGolubev_Services_OOP_Client_Validation.html">NikitosGolubev\Services\OOP\Client\Validation</a></li><li><a href="NikitosGolubev_Services_OOP_Client_Validation_FieldsValidation.html">NikitosGolubev\Services\OOP\Client\Validation\FieldsValidation</a></li><li><a href="NikitosGolubev_Services_OOP_UIFactories.html">NikitosGolubev\Services\OOP\UIFactories</a></li><li><a href="NikitosGolubev_Services_OOP_Validation;.html">NikitosGolubev\Services\OOP\Validation;</a></li><li><a href="NikitosGolubev_Services_OOP_Validation_ValidationResponses.html">NikitosGolubev\Services\OOP\Validation\ValidationResponses</a></li><li><a href="NikitosGolubev_Services_OOP_Validation_ValidationResponses;.html">NikitosGolubev\Services\OOP\Validation\ValidationResponses;</a></li><li><a href="NikitosGolubev_Views.html">NikitosGolubev\Views</a></li><li><a href="NikitosGolubev_Views_FormsValidation.html">NikitosGolubev\Views\FormsValidation</a></li><li><a href="NikitosGolubev_Views_FormsValidation_Behaviours_FailBehaviours.html">NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours</a></li><li><a href="NikitosGolubev_Views_FormsValidation_Behaviours_FailBehaviours;.html">NikitosGolubev\Views\FormsValidation\Behaviours\FailBehaviours;</a></li><li><a href="NikitosGolubev_Views_FormsValidation_Behaviours_SuccessBehaviours.html">NikitosGolubev\Views\FormsValidation\Behaviours\SuccessBehaviours</a></li><li><a href="NikitosGolubev_Views_FormsValidation_Behaviours_SuccessBehaviours;.html">NikitosGolubev\Views\FormsValidation\Behaviours\SuccessBehaviours;</a></li><li><a href="NikitosGolubev_Views_FormsValidation_FormsViews.html">NikitosGolubev\Views\FormsValidation\FormsViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#$">$</a></li><li><a href="global.html#$$">$$</a></li><li><a href="global.html#findParentByClassName">findParentByClassName</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#value">value</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Apr 21 2019 14:26:32 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

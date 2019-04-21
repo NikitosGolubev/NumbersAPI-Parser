@@ -9,7 +9,7 @@ import Controller from '../controller';
  * Provides API to validate forms
  * @uses NikitosGolubev\Controllers\Controller
  */
-export default class FormsValidationController extends Controller {
+class FormsValidationController extends Controller {
     constructor(model, view) { super(model, view); }
 
     /**
@@ -20,3 +20,5 @@ export default class FormsValidationController extends Controller {
         throw new Error('This is abstract method of interface!');
     }
 }
+
+export default FormsValidationController;

@@ -11,7 +11,7 @@ import ValidationConfig from '../../../../configs/validation/validation-config';
  * @uses NikitosGolubev\Services\OOP\Validation\ValidationResponses\ValidationResponseService
  * @uses NikitosGolubev\Configs\Validation\ValidationConfig
  */
-export default class DefaultFieldValidationResponseService extends ValidationResponseService {
+class DefaultFieldValidationResponseService extends ValidationResponseService {
     constructor() {
         super();
     }
@@ -79,3 +79,5 @@ export default class DefaultFieldValidationResponseService extends ValidationRes
         return this.build(false, $message, fieldName, $addPropertiesObj);
     }
 }
+
+export default DefaultFieldValidationResponseService;

@@ -14,7 +14,7 @@ import FactNumInRangeView from '../../../views/forms-validation/forms-views/fact
  * @uses NikitosGolubev\Models\FormsValidation\FormsModels\FactNumInRangeModel
  * @uses NikitosGolubev\Views\FormsValidation\FormsViews\FactNumInRangeView
  */
-export default class FactNumInRangeController extends FormsValidationController {
+class FactNumInRangeController extends FormsValidationController {
     constructor() {
         let model = new FactNumInRangeModel;
         let view = new FactNumInRangeView(model);
@@ -28,3 +28,5 @@ export default class FactNumInRangeController extends FormsValidationController 
         this.model.validate(event);
     }
 }
+
+export default FactNumInRangeController;
