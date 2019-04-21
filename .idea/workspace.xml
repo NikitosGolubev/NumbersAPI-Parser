@@ -2,42 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64720024-d2ac-4e29-bcfc-4a07b03d6be9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/app/js/app/main/preloader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/sass/main/preloader.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/core/preloader-scripts.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/core/preloader.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/app/js/build/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/build/main/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/app/js/build/mvc-starters/forms-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/build/mvc-starters/forms-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/configs/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/configs/forms/fact-num-in-range-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/configs/forms/fact-num-in-range-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/configs/forms/num-of-facts-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/configs/forms/num-of-facts-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/configs/forms/particular-fact-numbers-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/configs/forms/particular-fact-numbers-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/configs/validation/parse-validation-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/configs/validation/parse-validation-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/configs/validation/validation-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/configs/validation/validation-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/forms-validation-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/forms-validation-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/fact-num-in-range.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/fact-num-in-range.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/num-of-facts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/num-of-facts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/particular-fact-numbers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/particular-fact-numbers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-models/fact-num-in-range.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-models/fact-num-in-range.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-models/num-of-facts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-models/num-of-facts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-models/particular-fact-numbers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-models/particular-fact-numbers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-validation-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/models/forms-validation/forms-validation-model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/models/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/models/model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/services/oop/client/validation/fields-validation-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/services/oop/client/validation/fields-validation-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/services/oop/client/validation/fields-validation/parse-facts-fields-validation-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/services/oop/client/validation/fields-validation/parse-facts-fields-validation-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/services/oop/ui-factories/parse-forms-ui-factory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/services/oop/ui-factories/parse-forms-ui-factory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/services/oop/validation/validation-responses/default-field-validation-response-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/services/oop/validation/validation-responses/default-field-validation-response-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/services/oop/validation/validation-responses/validation-response-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/services/oop/validation/validation-responses/validation-response-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/services/oop/validation/validation-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/services/oop/validation/validation-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/fail-behaviours/default-fail-behaviour.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/fail-behaviours/default-fail-behaviour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/fail-behaviours/fail-behaviour-interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/fail-behaviours/fail-behaviour-interface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/success-behaviours/default-success-behaviour.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/success-behaviours/default-success-behaviour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/success-behaviours/success-behaviour-interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/success-behaviours/success-behaviour-interface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-validation-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-validation-view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-views/fact-num-in-range.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-views/fact-num-in-range.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-views/num-of-facts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-views/num-of-facts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-views/particular-fact-numbers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/forms-validation/forms-views/particular-fact-numbers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/views/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/views/view.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/dist/js/build/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/js/build/main/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/dist/js/build/mvc-starters/forms-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/js/build/mvc-starters/forms-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/jsdoc.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/jsdoc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +39,13 @@
   <component name="FileEditorManager">
     <leaf />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <replaceStrings>
       <replace />
@@ -79,12 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Parsing/ParticularFactNumbersController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Parsing/FactNumInRangeController.php" />
-        <option value="$PROJECT_DIR$/app/Services/Parsing/DefaultFactsParser.php" />
-        <option value="$PROJECT_DIR$/app/Services/Parsing/Parser.php" />
-        <option value="$PROJECT_DIR$/app/Category.php" />
-        <option value="$PROJECT_DIR$/app/Fact.php" />
         <option value="$PROJECT_DIR$/app/Services/ComplexDbLoaders/DbLoader.php" />
         <option value="$PROJECT_DIR$/app/Services/ComplexDbLoaders/Reportable.php" />
         <option value="$PROJECT_DIR$/app/Number.php" />
@@ -98,7 +73,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Parsing/FactsParsingController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/gulpfile.js" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/fact-num-in-range.js" />
         <option value="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/num-of-facts.js" />
         <option value="$PROJECT_DIR$/public/app/js/controllers/forms-validation/index/particular-fact-numbers.js" />
@@ -130,6 +104,13 @@
         <option value="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/success-behaviours/default-success-behaviour.js" />
         <option value="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/fail-behaviours/fail-behaviour-interface.js" />
         <option value="$PROJECT_DIR$/public/app/js/views/forms-validation/behaviours/fail-behaviours/default-fail-behaviour.js" />
+        <option value="$PROJECT_DIR$/public/jsdoc.json" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/core/preloader-scripts.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/core/preloader.blade.php" />
+        <option value="$PROJECT_DIR$/public/app/js/app/main/preloader.js" />
+        <option value="$PROJECT_DIR$/public/app/sass/main/preloader.sass" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -220,7 +201,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="979" />
     <option name="height" value="1040" />
@@ -240,24 +221,6 @@
             <path>
               <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,12 +286,12 @@
       <workItem from="1555531499810" duration="220000" />
       <workItem from="1555580407180" duration="6043000" />
       <workItem from="1555781841975" duration="12975000" />
-      <workItem from="1555839219614" duration="6108000" />
+      <workItem from="1555839219614" duration="10036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60594000" />
+    <option name="totallyTimeSpent" value="64522000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,7 +303,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2707775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -368,60 +331,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Services/ComplexDbLoaders/ConcreteLoaders/DefaultFactAndNumberLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="76" column="29" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="29" />
-          <folding>
-            <element signature="e#65#108#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/core/default-css.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/sass/main/_settings.sass">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/sass/main/main.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/sass/main/pages/report.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/parsing/report.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
-          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Number.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Parsing/FactsParsingController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2625">
@@ -456,22 +365,8 @@
     <entry file="file://$PROJECT_DIR$/public/app/js/app/main/main.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/jsdoc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/js/services/functional/client/dom-service.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/js/changers/dom-optimizer.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -738,6 +633,83 @@
           <folding>
             <element signature="e#126#190#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/jsdoc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/sass/main/main.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/core/default-css.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/core/default-js.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/core/preloader-scripts.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="77" lean-forward="true" selection-start-line="1" selection-start-column="77" selection-end-line="1" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/sass/main/_settings.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="90" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/sass/main/preloader.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/js/app/main/preloader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/core/preloader.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
         </state>
       </provider>
     </entry>

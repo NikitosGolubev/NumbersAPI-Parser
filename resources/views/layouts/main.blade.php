@@ -6,11 +6,13 @@
     <title>@yield('title')</title>
     <meta name='description' content="@yield('page-description')" />
 
+    @include('layouts.core.preloader-scripts')
     @include('layouts.core.default-css')
 
     @yield('head-tags')
 </head>
 <body class='page-body'>
+    @include('layouts.core.preloader')
     @include('layouts.core.header')
 
     <main>
