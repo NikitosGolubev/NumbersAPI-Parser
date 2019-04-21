@@ -12,3 +12,17 @@ April 2019.
 
 **Error pages (404, 403, 520, etc)**
 ![errors page](https://raw.githubusercontent.com/NikitosGolubev/images/master/numbersapi-parser-404.png)
+
+# My memories
+
+# Project description
+
+# Skills applied
+
+# NumbersAPI-Parser
+
+# Мои воспоминания
+
+# Описание проекта
+
+# Применённые навыки
