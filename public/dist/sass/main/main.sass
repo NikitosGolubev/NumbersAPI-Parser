@@ -27,7 +27,7 @@ select, input, button
     background-color: transparent
     outline: none
 
-::selection
+::selection, mark
     background: rgba(color(primary), 0.6)
 
 
@@ -116,6 +116,9 @@ h1, h2, h3, h4, h5, h6,
 
     &_super-big-sz
         font-size: $super_big_font_size
+
+.centered
+    text-align: center
 
 /* fonts */
 @each $font_name, $font in $fonts

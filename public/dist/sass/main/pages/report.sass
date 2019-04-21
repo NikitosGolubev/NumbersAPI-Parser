@@ -1,0 +1,39 @@
+@import ../settings
+
+.report
+  width: 90%
+  margin: auto
+  margin-top: 3vmin
+
+  &__table
+    text-align: center
+    width: 100%
+    margin-top: 2vmin
+
+
+  &__header
+    background-color: color(secondary)
+    padding: 1vmin 2vmin
+    font-size: $big_font_size
+
+  &__td
+    padding: 2vmin
+
+  &__number_success
+    background-color: rgba(color(primary), 0.6)
+
+  &__number_error
+    background-color: rgba(orangered, 0.6)
+
+  &__category
+    font-weight: bold
+
+  &__message
+    font-style: italic
+    font-weight: bold
+
+    &_success
+      color: color(primary)
+
+    &_error
+      color: orangered

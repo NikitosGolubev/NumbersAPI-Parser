@@ -1,1 +1,0 @@
-"use strict";var domOptimizer=require("../../changers/dom-optimizer").domOptimizer;function starterWorker(){domOptimizer.fixTargetBlank()}window.addEventListener("load",starterWorker);

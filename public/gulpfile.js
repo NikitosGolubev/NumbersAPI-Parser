@@ -32,7 +32,8 @@ let paths = {
 		compileJsSrc: "app/js/app/**/*.js",
 		compileJsDest: "app/js/build",
 		src: ["app/js/**/*.js", "!app/js/build/**/*.js"],
-		dest: "dist/js"
+		loadSrc: "app/js/build/**/*.js",
+		dest: "dist/js/build"
 	},
 	fonts: {
 		src: "app/fonts/**/*.+(ttf|woff|eot)",
@@ -86,7 +87,7 @@ function loadSASS() {
 
 // Load js files to dist folder (compiles, uglifies them)
 function loadJS() {
-	return gulp.src(paths.js.src)
+	return gulp.src(paths.js.loadSrc)
 	// Transforms ES6 and higher to ES5
 	.pipe(babel({
         presets: ['@babel/env']

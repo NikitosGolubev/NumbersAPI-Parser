@@ -3,6 +3,9 @@
 .error-response
     text-align: center
     margin-top: 3vh
+    display: flex
+    flex-direction: column
+    align-items: center
 
     &__code
         font-weight: bold
@@ -10,11 +13,15 @@
         color: color(primary)
         line-height: 0.75
 
-    &__message
+    &__short-message
         font-family: font(alternative)
         font-size: 20vmin
         line-height: 0.75
 
+    &__full-message
+        margin-top: 4vmin
+        max-width: 60%
+
     &__link
         z-index: 1
-        margin-top: 5vmin
+        margin-top: 2vmin
