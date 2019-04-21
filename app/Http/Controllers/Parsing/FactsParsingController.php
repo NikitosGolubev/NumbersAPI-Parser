@@ -68,34 +68,51 @@ abstract class FactsParsingController extends Controller
     }
 
     /**
-     * @todo Complete development of this method and document it.
+     * Main parsing method.
+     *
+     * Template method which fully manages
+     * the process of handling and parsing data passed with request.
+     *
+     * @param Request $request Data which user provided to perform parsing
+     * @return array $reports Data that was parsed and loaded to DB
      */
     final public function index(Request $request) {
         $this->request = $request;
+        // Defining params(data fields) which are expected to be passed
         $this->defineParams();
+        // Setting validation for given data
         $this->setGeneralValidation();
 
+        // Executing all validation commands that were set
         $val_results = $this->validator->executeAllCommands();
+        // Getting general result of validation, whether it's success or failure.
         $generalValResult = $this->validator->getGeneralValidationResult($val_results);
 
+        // If general result of validation is 'failure' than saying that to user.
         if (!$generalValResult) {
             $validation_presenter = new FailValidationPresenter;
             return $validation_presenter->display($val_results);
         }
 
+        // Preparing data to correct format to make in compatible with parser
         $data_for_parsing = $this->prepareDataForParsing();
+        // Adjusting some parser settings to make it's work more effective for our purposes and limits.
         $this->adjustParserSettings();
+        // Parsing data, expected array [0 => [result1], 1 => [result2]...]
         $parsing_result = $this->parser->parse($data_for_parsing);
 
+        // Will contain all the reports about loading parsed facts to DB
         $reports = [];
         if (!empty($parsing_result)) {
             foreach ($parsing_result as $fact) {
+                // Attempting to load parsed fact to DB, getting report about out attempt.
                 $report = $this->dbLoader->load($fact);
                 $reports[] = $report;
             }
         } else $reports = false;
 
-        dd($reports);
+        // Displaying reports to user
+        return view('parsing.report', ['reports' => $reports]);
     }
 
     /**

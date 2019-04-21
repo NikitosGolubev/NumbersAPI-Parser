@@ -51,7 +51,7 @@ class DefaultFactAndNumberLoader implements DbLoader, Reportable
     /**
      * Reports whether fact was inserted successfully or not.
      * @param array $data Expected array with following structure:
-     * ['fact_data' => $parsed_fact_body, 'isFound' => $bool, 'isUnique' => $bool]
+     * ['fact_data' => $parsed_fact_body, 'isFound' => $bool, 'isUnique' => $bool, 'result' => $bool]
      * @return array
      */
     public function report($data): array
@@ -59,9 +59,10 @@ class DefaultFactAndNumberLoader implements DbLoader, Reportable
         $report = [];
         $report['number'] = $data['fact_data']->number;
         $report['fact'] = $data['fact_data']->text;
-        $report['type'] = $data['fact_data']->type;
+        $report['category'] = $data['fact_data']->type;
         $report['isFound'] = $data['isFound'];
         $report['isUnique'] = $data['isUnique'];
+        $report['result'] = $data['result'];
         return $report;
     }
 
@@ -74,7 +75,8 @@ class DefaultFactAndNumberLoader implements DbLoader, Reportable
         return $this->report([
             'fact_data' => $parsed_fact,
             'isFound' => true,
-            'isUnique' => true
+            'isUnique' => true,
+            'result' => true
         ]);
     }
 
@@ -87,7 +89,8 @@ class DefaultFactAndNumberLoader implements DbLoader, Reportable
         return $this->report([
             'fact_data' => $parsed_fact,
             'isFound' => false,
-            'isUnique' => true
+            'isUnique' => true,
+            'result' => false
         ]);
     }
 
@@ -100,7 +103,8 @@ class DefaultFactAndNumberLoader implements DbLoader, Reportable
         return $this->report([
             'fact_data' => $parsed_fact,
             'isFound' => true,
-            'isUnique' => false
+            'isUnique' => false,
+            'result' => false
         ]);
     }
 

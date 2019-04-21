@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64720024-d2ac-4e29-bcfc-4a07b03d6be9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/ComplexDbLoaders/ConcreteLoaders/DefaultFactAndNumberLoader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/ComplexDbLoaders/DbLoader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/ComplexDbLoaders/Reportable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/sass/main/pages/report.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/parsing/report.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Parsing/FactsParsingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Parsing/FactsParsingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Configs/Concrete/Parsing/ParseConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Configs/Concrete/Parsing/ParseConfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Parsing/DefaultFactsParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Parsing/DefaultFactsParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Parsing/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Parsing/Parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ComplexDbLoaders/ConcreteLoaders/DefaultFactAndNumberLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ComplexDbLoaders/ConcreteLoaders/DefaultFactAndNumberLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/css/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/css/main/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/build/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/build/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/build/mvc-starters/forms-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/build/mvc-starters/forms-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/sass/main/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/sass/main/main.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,20 +40,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Parsing/FactsParsingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="97" column="8" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="21" />
-              <folding>
-                <element signature="e#49#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <replaceStrings>
@@ -76,7 +65,6 @@
         <option value="$PROJECT_DIR$/app/Services/Configs/ValidationalConfig.php" />
         <option value="$PROJECT_DIR$/app/Services/Parsing/ParsingBehaviour.php" />
         <option value="$PROJECT_DIR$/app/Services/Parsing/TestParser.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ErrorsController.php" />
         <option value="$PROJECT_DIR$/app/Services/Validation/Validator.php" />
@@ -84,7 +72,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Parsing/NumOfFactsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Parsing/ParticularFactNumbersController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Parsing/FactNumInRangeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/index/index.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Services/Parsing/DefaultFactsParser.php" />
         <option value="$PROJECT_DIR$/app/Services/Parsing/Parser.php" />
@@ -94,7 +81,13 @@
         <option value="$PROJECT_DIR$/app/Services/ComplexDbLoaders/Reportable.php" />
         <option value="$PROJECT_DIR$/app/Number.php" />
         <option value="$PROJECT_DIR$/app/Services/Configs/Concrete/Parsing/ParseConfig.php" />
+        <option value="$PROJECT_DIR$/resources/views/index/index.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Services/ComplexDbLoaders/ConcreteLoaders/DefaultFactAndNumberLoader.php" />
+        <option value="$PROJECT_DIR$/public/app/sass/main/main.sass" />
+        <option value="$PROJECT_DIR$/resources/views/parsing/report.blade.php" />
+        <option value="$PROJECT_DIR$/public/app/sass/main/pages/report.sass" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Parsing/FactsParsingController.php" />
       </list>
     </option>
@@ -187,9 +180,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -199,105 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
-              <item name="Configs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
-              <item name="Configs" type="462c0819:PsiDirectoryNode" />
-              <item name="Concrete" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
-              <item name="Configs" type="462c0819:PsiDirectoryNode" />
-              <item name="Concrete" type="462c0819:PsiDirectoryNode" />
-              <item name="Parsing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="responses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -305,23 +199,16 @@
               <item name="NumbersAPI-Parser" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\Nikitos\Desktop\GitHubProjects\NumbersAPI-Parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="NumbersAPI-Parser" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Nikitos\Desktop\GitHubProjects\NumbersAPI-Parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Nikitos\Desktop\GitHubProjects\NumbersAPI-Parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Services" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="NumbersAPI-Parser" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Nikitos\Desktop\GitHubProjects\NumbersAPI-Parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Services" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="FactsParser" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="NumbersAPI-Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NumbersAPI-Parser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -386,12 +273,13 @@
       <workItem from="1555497951067" duration="12849000" />
       <workItem from="1555531499810" duration="220000" />
       <workItem from="1555580407180" duration="6043000" />
-      <workItem from="1555781841975" duration="6228000" />
+      <workItem from="1555781841975" duration="12975000" />
+      <workItem from="1555839219614" duration="1097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47739000" />
+    <option name="totallyTimeSpent" value="55583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,9 +292,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26742628" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2707775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -432,33 +319,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/js/build/mvc-starters/forms-validation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="15174" column="6" selection-start-line="15174" selection-start-column="6" selection-end-line="15174" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://PHP/C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/app/Services">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>$PROJECT_DIR$/app/Services</OriginalElement>
-          <nodes>
-            <node x="" y="">$PROJECT_DIR$/app/Services/Validation</node>
-            <node x="" y="">$PROJECT_DIR$/app/Services/Configs</node>
-            <node x="" y="">$PROJECT_DIR$/app/Services/ValidationPresentation</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="102.0" y="89.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://PHP/C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/app/Services/Validation">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -519,13 +379,6 @@
     <entry file="file://$PROJECT_DIR$/app/Services/Parsing/TestParser.php" />
     <entry file="file://$PROJECT_DIR$/public/web.config">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -651,13 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/ComplexDbLoaders/DbLoader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -669,13 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Number.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -703,20 +542,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/sass/main/pages/index.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="4" lean-forward="true" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/ComplexDbLoaders/ConcreteLoaders/DefaultFactAndNumberLoader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="-157">
+          <caret line="76" column="29" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="29" />
+          <folding>
+            <element signature="e#65#108#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/core/default-css.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/sass/main/_settings.sass">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/sass/main/main.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/sass/main/pages/report.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/parsing/report.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Number.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Parsing/FactsParsingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="97" column="8" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="21" />
-          <folding>
-            <element signature="e#49#62#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="2625">
+          <caret line="113" column="37" lean-forward="true" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
