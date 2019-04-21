@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/App.html">\App</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">119</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-946325623"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-946325623" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-192293021"></a>
+                                <a href="../namespaces/App.html" style="margin-left: 30px; padding-left: 0">App</a>
+            </div>
+            <div id="namespace-192293021" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-393636098"></a>
+                                <a href="../namespaces/App.Console.html" style="margin-left: 30px; padding-left: 0">Console</a>
+            </div>
+            <div id="namespace-393636098" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Console.Kernel.html">Kernel</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1971568557"></a>
+                                <a href="../namespaces/App.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1971568557" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Exceptions.Handler.html">Handler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-924925766"></a>
+                                <a href="../namespaces/App.Http.html" style="margin-left: 30px; padding-left: 0">Http</a>
+            </div>
+            <div id="namespace-924925766" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1962313503"></a>
+                                <a href="../namespaces/App.Http.Controllers.html" style="margin-left: 30px; padding-left: 0">Controllers</a>
+            </div>
+            <div id="namespace-1962313503" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-803979243"></a>
+                                <a href="../namespaces/App.Http.Controllers.Auth.html" style="margin-left: 30px; padding-left: 0">Auth</a>
+            </div>
+            <div id="namespace-803979243" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Http.Controllers.Auth.ForgotPasswordController.html">ForgotPasswordController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.Auth.LoginController.html">LoginController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.Auth.RegisterController.html">RegisterController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.Auth.ResetPasswordController.html">ResetPasswordController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.Auth.VerificationController.html">VerificationController</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-102509804"></a>
+                                <a href="../namespaces/App.Http.Controllers.Parsing.html" style="margin-left: 30px; padding-left: 0">Parsing</a>
+            </div>
+            <div id="namespace-102509804" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Http.Controllers.Parsing.FactNumInRangeController.html">FactNumInRangeController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html">FactsParsingController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html">NumOfFactsController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.Parsing.ParticularFactNumbersController.html">ParticularFactNumbersController</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Http.Controllers.Controller.html">Controller</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.ErrorsController.html">ErrorsController</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Controllers.IndexController.html">IndexController</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-988356085"></a>
+                                <a href="../namespaces/App.Http.Middleware.html" style="margin-left: 30px; padding-left: 0">Middleware</a>
+            </div>
+            <div id="namespace-988356085" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Http.Middleware.Authenticate.html">Authenticate</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Middleware.CheckForMaintenanceMode.html">CheckForMaintenanceMode</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Middleware.EncryptCookies.html">EncryptCookies</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Middleware.RedirectIfAuthenticated.html">RedirectIfAuthenticated</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Middleware.TrimStrings.html">TrimStrings</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Middleware.TrustProxies.html">TrustProxies</a></li>
+                                                    <li class="class"><a href="../classes/App.Http.Middleware.VerifyCsrfToken.html">VerifyCsrfToken</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Http.Kernel.html">Kernel</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2084649044"></a>
+                                <a href="../namespaces/App.Providers.html" style="margin-left: 30px; padding-left: 0">Providers</a>
+            </div>
+            <div id="namespace-2084649044" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Providers.AppServiceProvider.html">AppServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/App.Providers.AuthServiceProvider.html">AuthServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/App.Providers.BroadcastServiceProvider.html">BroadcastServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/App.Providers.EventServiceProvider.html">EventServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/App.Providers.RouteServiceProvider.html">RouteServiceProvider</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1613568200"></a>
+                                <a href="../namespaces/App.Services.html" style="margin-left: 30px; padding-left: 0">Services</a>
+            </div>
+            <div id="namespace-1613568200" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-826847079"></a>
+                                <a href="../namespaces/App.Services.ComplexDbLoaders.html" style="margin-left: 30px; padding-left: 0">ComplexDbLoaders</a>
+            </div>
+            <div id="namespace-826847079" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-538741739"></a>
+                                <a href="../namespaces/App.Services.ComplexDbLoaders.ConcreteLoaders.html" style="margin-left: 30px; padding-left: 0">ConcreteLoaders</a>
+            </div>
+            <div id="namespace-538741739" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Services.ComplexDbLoaders.ConcreteLoaders.DefaultFactAndNumberLoader.html">DefaultFactAndNumberLoader</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Services.ComplexDbLoaders.DbLoader.html">DbLoader</a></li>
+                                                    <li class="interface"><a href="../classes/App.Services.ComplexDbLoaders.Reportable.html">Reportable</a></li>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1074236965"></a>
+                                <a href="../namespaces/App.Services.Configs.html" style="margin-left: 30px; padding-left: 0">Configs</a>
+            </div>
+            <div id="namespace-1074236965" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1522770242"></a>
+                                <a href="../namespaces/App.Services.Configs.Concrete.html" style="margin-left: 30px; padding-left: 0">Concrete</a>
+            </div>
+            <div id="namespace-1522770242" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-603503944"></a>
+                                <a href="../namespaces/App.Services.Configs.Concrete.Parsing.html" style="margin-left: 30px; padding-left: 0">Parsing</a>
+            </div>
+            <div id="namespace-603503944" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Services.Configs.Concrete.Parsing.ParseConfig.html">ParseConfig</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Services.Configs.Config.html">Config</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Configs.ValidationalConfig.html">ValidationalConfig</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-300146194"></a>
+                                <a href="../namespaces/App.Services.Parsing.html" style="margin-left: 30px; padding-left: 0">Parsing</a>
+            </div>
+            <div id="namespace-300146194" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Services.Parsing.DefaultFactsParser.html">DefaultFactsParser</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Parsing.Parser.html">Parser</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-911185501"></a>
+                                <a href="../namespaces/App.Services.Validation.html" style="margin-left: 30px; padding-left: 0">Validation</a>
+            </div>
+            <div id="namespace-911185501" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-68053987"></a>
+                                <a href="../namespaces/App.Services.Validation.Commands.html" style="margin-left: 30px; padding-left: 0">Commands</a>
+            </div>
+            <div id="namespace-68053987" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1088694287"></a>
+                                <a href="../namespaces/App.Services.Validation.Commands.FieldValidationCommands.html" style="margin-left: 30px; padding-left: 0">FieldValidationCommands</a>
+            </div>
+            <div id="namespace-1088694287" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Services.Validation.Commands.FieldValidationCommands.CategoryValidationCommand.html">CategoryValidationCommand</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.Commands.FieldValidationCommands.ExampleValidationCommand.html">ExampleValidationCommand</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.Commands.FieldValidationCommands.FactNumbersDifferenceValidationCommand.html">FactNumbersDifferenceValidationCommand</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.Commands.FieldValidationCommands.FactNumbersStorageValidationCommand.html">FactNumbersStorageValidationCommand</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.Commands.FieldValidationCommands.FactNumberValidationCommand.html">FactNumberValidationCommand</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.Commands.FieldValidationCommands.FieldValidationCommand.html">FieldValidationCommand</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.Commands.FieldValidationCommands.NumFactsToParseValidationCommand.html">NumFactsToParseValidationCommand</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Services.Validation.Commands.Command.html">Command</a></li>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Services.Validation.ResponseResult.html">ResponseResult</a></li>
+                                                                                                    <li class="class"><a href="../classes/App.Services.Validation.SimpleVal.html">SimpleVal</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.ValidationResponse.html">ValidationResponse</a></li>
+                                                    <li class="class"><a href="../classes/App.Services.Validation.Validator.html">Validator</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-59642533"></a>
+                                <a href="../namespaces/App.Services.ValidationPresentation.html" style="margin-left: 30px; padding-left: 0">ValidationPresentation</a>
+            </div>
+            <div id="namespace-59642533" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Services.ValidationPresentation.ValidationPresenter.html">ValidationPresenter</a></li>
+                                                                                                    <li class="class"><a href="../classes/App.Services.ValidationPresentation.FailValidationPresenter.html">FailValidationPresenter</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Category.html">Category</a></li>
+                                                    <li class="class"><a href="../classes/App.Fact.html">Fact</a></li>
+                                                    <li class="class"><a href="../classes/App.Number.html">Number</a></li>
+                                                    <li class="class"><a href="../classes/App.User.html">User</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/App.Http.Controllers.Parsing.html">\App\Http\Controllers\Parsing</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\App\Http\Controllers\Parsing</small>NumOfFactsController</h1>
+                    <p><em>Responsible for handling data of &#039;Number of facts to parse&#039; form</em></p>
+                    <p>It's abstract.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#method_setConfig" class="">setConfig()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#method_setParser" class="">setParser()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#method_index" class="">index()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html#method_defineParams" class="">defineParams()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html#method_setGeneralValidation" class="">setGeneralValidation()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html#method_prepareDataForParsing" class="">prepareDataForParsing()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#method_adjustParserSettings" class="">adjustParserSettings()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#method_linkNumbersWithRandomCategories" class="">linkNumbersWithRandomCategories()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#method_defineCategoriesArray" class="">defineCategoriesArray()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#property_validator" class="">$validator</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#property_cfg" class="">$cfg</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#property_parser" class="">$parser</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#property_dbLoader" class="">$dbLoader</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html#property_request" class="">$request</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html#method_setCategoryValidation" class="">setCategoryValidation()</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html#method_setNumFactsToParseValidation" class="">setNumFactsToParseValidation()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html#property_categoryPrm" class="">$categoryPrm</a><br />
+                                                                    <a href="../classes/App.Http.Controllers.Parsing.NumOfFactsController.html#property_numFactsToParsePrm" class="">$numFactsToParsePrm</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Http.Controllers.Parsing.NumOfFactsController.html"><div class="path-wrapper">Http\Controllers\Parsing\NumOfFactsController.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                        <div class="namespace-wrapper">\Illuminate\Routing\Controller</div>
+                                                                    
+                                        <div class="namespace-wrapper"><a href="../classes/App.Http.Controllers.Controller.html">\App\Http\Controllers\Controller</a></div>
+                                                                    
+                                        <div class="namespace-wrapper"><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html">\App\Http\Controllers\Parsing\FactsParsingController</a></div>
+                                                                                                    <div class="namespace-wrapper">\App\Http\Controllers\Parsing\NumOfFactsController</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_validator" name="property_validator" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$validator</h3>
+                <pre class="signature">$validator : \App\Services\Validation\Validator</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/App.Services.Validation.Validator.html">\App\Services\Validation\Validator</a>
+                &mdash; Thing which provides api to run validation commands.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_cfg" name="property_cfg" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$cfg</h3>
+                <pre class="signature">$cfg : \App\Http\Controllers\Parsing\Config</pre>
+                <p><em>Provides array with different settings needed to establish the proccess of handling data</em></p>
+                
+
+                                <h4>Type</h4>
+                \App\Http\Controllers\Parsing\Config
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_parser" name="property_parser" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$parser</h3>
+                <pre class="signature">$parser : \App\Services\Parsing\Parser</pre>
+                <p><em>Provides object which can perform parsing</em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/App.Services.Parsing.Parser.html">\App\Services\Parsing\Parser</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_dbLoader" name="property_dbLoader" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$dbLoader</h3>
+                <pre class="signature">$dbLoader : \App\Http\Controllers\Parsing\DbLoader</pre>
+                <p><em>Object which would load parsed data in the database.</em></p>
+                
+
+                                <h4>Type</h4>
+                \App\Http\Controllers\Parsing\DbLoader
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_request" name="property_request" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$request</h3>
+                <pre class="signature">$request : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_categoryPrm" name="property_categoryPrm" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$categoryPrm</h3>
+                <pre class="signature">$categoryPrm : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_numFactsToParsePrm" name="property_numFactsToParsePrm" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$numFactsToParsePrm</h3>
+                <pre class="signature">$numFactsToParsePrm : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setConfig" name="method_setConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setConfig(\App\Services\Configs\Concrete\Parsing\ParseConfig  <span class="argument">$cfg</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/App.Services.Configs.Concrete.Parsing.ParseConfig.html">\App\Services\Configs\Concrete\Parsing\ParseConfig</a></td>
+                                <td>$cfg </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setParser" name="method_setParser" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setParser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setParser(\App\Services\Parsing\Parser  <span class="argument">$parser</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/App.Services.Parsing.Parser.html">\App\Services\Parsing\Parser</a></td>
+                                <td>$parser </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_index" name="method_index" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">index()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">index(\Illuminate\Http\Request  <span class="argument">$request</span>) : array</pre>
+                <p><em>Main parsing method.</em></p>
+                <p>Template method which fully manages
+the process of handling and parsing data passed with request.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\Illuminate\Http\Request</td>
+                                <td>$request </td>
+                                <td><p>Data which user provided to perform parsing</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>$reports Data that was parsed and loaded to DB</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                    <span class="label label-info">final</span>
+                                    <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_defineParams" name="method_defineParams" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">defineParams()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">defineParams() : Void</pre>
+                <p><em>Defines the data which supposed to be passed with request.</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    Void
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href=""><span class="namespace-wrapper">\App\Http\Controllers\Parsing\parent::defineParams()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setGeneralValidation" name="method_setGeneralValidation" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">setGeneralValidation()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setGeneralValidation() : Void</pre>
+                <p><em>Sets validation commands for provided data.</em></p>
+                <p>If user has passed the certain data, than this method
+defines how the params of data should be called and
+how it should be validated.</p>
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    Void
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href=""><span class="namespace-wrapper">\App\Http\Controllers\Parsing\parent::setGeneralValidation()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_prepareDataForParsing" name="method_prepareDataForParsing" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">prepareDataForParsing()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">prepareDataForParsing() : mixed</pre>
+                <p><em>Prepares data for parsing.</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>Data, which may be send for parsing.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href=""><span class="namespace-wrapper">\App\Http\Controllers\Parsing\parent::prepareDataForParsing()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_adjustParserSettings" name="method_adjustParserSettings" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">adjustParserSettings()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">adjustParserSettings() </pre>
+                <p><em>Empty method, which may be overridden to adjust the parsing settings.</em></p>
+                <p>(usually through setters).</p>
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_linkNumbersWithRandomCategories" name="method_linkNumbersWithRandomCategories" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">linkNumbersWithRandomCategories()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">linkNumbersWithRandomCategories(array  <span class="argument">$numbers</span>, array  <span class="argument">$categories</span>) : array</pre>
+                <p><em>Assigns category randomly to each given number.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$numbers </td>
+                                <td><p>What to parse: [1,324,3....]</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$categories </td>
+                                <td><p>Which categories are allowed: ['animals', 'birds'...]</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>[['category' =&gt; $fact_category, 'number' =&gt; $fact_number] ...]</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_defineCategoriesArray" name="method_defineCategoriesArray" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">defineCategoriesArray()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">defineCategoriesArray(string|array  <span class="argument">$categories</span>) : array</pre>
+                <p><em>Prepares provided category data to single format.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|array</td>
+                                <td>$categories </td>
+                                <td><p>Single category or array of categories expected.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/App.Http.Controllers.Parsing.FactsParsingController.html"><div class="path-wrapper">\App\Http\Controllers\Parsing\FactsParsingController</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCategoryValidation" name="method_setCategoryValidation" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setCategoryValidation()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCategoryValidation() </pre>
+                <p><em>Sets validation for &#039;category&#039; param</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setNumFactsToParseValidation" name="method_setNumFactsToParseValidation" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setNumFactsToParseValidation()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setNumFactsToParseValidation() </pre>
+                <p><em>Sets validation for &#039;number of facts to parse&#039; param</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Nikitos/Desktop/GitHubProjects/NumbersAPI-Parser/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">NumOfFactsController.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Http\Controllers\Parsing\NumOfFactsController.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/App.html">\App</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 21st, 2019 at 16:08.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

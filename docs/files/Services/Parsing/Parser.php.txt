@@ -1,0 +1,153 @@
+<?php
+
+namespace App\Services\Parsing;
+
+use GuzzleHttp\Promise;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Client;
+
+/**
+ * Class Parser, foundation for performing parsing.
+ * @package App\Services\Parsing
+ */
+abstract class Parser
+{
+    /**
+     * @var int Number of items can be parsed concurrently
+     */
+    protected $concurrencyNumber = 5;
+
+    /**
+     * @var int Delay between requests
+     */
+    protected $requestsDelaySec = 0;
+
+    /**
+     * @param int $concurrency_number
+     */
+    public function setConcurrencyNumber(int $concurrency_number): void
+    {
+        $this->concurrencyNumber = $concurrency_number;
+    }
+
+    /**
+     * @param int $requests_delay_sec
+     */
+    public function setRequestsDelaySec(int $requests_delay_sec): void
+    {
+        $this->requestsDelaySec = $requests_delay_sec;
+    }
+
+    /**
+     * Should choose the way for performing parsing.
+     * @param $data
+     * @return array
+     */
+    abstract public function parse($data);
+
+    /**
+     * Template method, performs full process to parse single data request.
+     * @param $data
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    final protected function work($data): array {
+        $data = $this->formDataForParsing($data);
+        $client = $data['client'];
+        $request = $data['request'];
+
+        $response = $this->singleParse($client, $request);
+        $parsed_content = $response->getBody()->getContents();
+
+        $parsed_content = $this->parseResponseMutator($parsed_content);
+
+        $result = [$parsed_content];
+
+        return $result;
+    }
+
+    /**
+     * Template method, performs full process to parse data concurrently.
+     * @param mixed $data
+     * @return array Parsing result.
+     */
+    final protected function multiWork($data): array {
+        $requests = $this->formDataForParsing($data);
+        $parsing_generator = $this->multiParse($requests);
+        $result = [];
+        // Getting data from generator
+        foreach ($parsing_generator as $parsing_result) {
+            foreach ($parsing_result as $parsing_item) {
+                if (isset($parsing_item['value'])) {
+                    $parsed_content = $parsing_item['value']->getBody()->getContents();
+                    $parsed_content = $this->parseResponseMutator($parsed_content);
+
+                    $result[] = $parsed_content;
+                }
+            }
+            // Timeouts between requests
+            sleep($this->requestsDelaySec);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Prepares given data for being understandable and ready to parse.
+     * (typically in request(-s)).
+     *
+     * @param $data
+     * @return array
+     */
+    abstract protected function formDataForParsing($data): array;
+
+    /**
+     * Function for adjusting parsing response.
+     * (Example: converting to particular data structure).
+     * (may be overridden by children classes).
+     *
+     * @param mixed $parse_data
+     */
+    protected function parseResponseMutator($parse_data) {}
+
+    /**
+     * Performs parsing of single request.
+     *
+     * @param Client $client
+     * @param Request $request
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    private function singleParse(Client $client, Request $request) {
+        $response = $client->send($request);
+        return $response;
+    }
+
+    /**
+     * Generator which performs (multi curl) concurrent parsing.
+     * @param array $requests Array of guzzle promises with pending requests.
+     * @return \Generator
+     */
+    private function multiParse(Array $requests) {
+        // Number of concurrent requests needed to parse all the provided requests
+        /*
+         * Example: we have 102 requests. Need to parse them all.
+         * Allowed number to parse at once(concurrently): 10
+         * How many times should we call generator to commit all of the requests?
+         * Answer: 102/10, ... BUT, we get float number = 10.2.
+         * As we can parse only 10 at once, than 2 requests are left.
+         * So applying ceil function which will round 10.2 to greater integer.
+         * And we get 11 - particular number of calls needed.
+         */
+        $total_num_requests_needed = ceil(count($requests) / $this->concurrencyNumber);
+
+        while ($total_num_requests_needed > 0) {
+            // Requests to be parsed NOW concurrently
+            $requests_pack = array_splice($requests, 0, $this->concurrencyNumber);
+            $results = Promise\settle($requests_pack)->wait();
+            $total_num_requests_needed--;
+            yield $results;
+        }
+    }
+}
+
